@@ -103,7 +103,7 @@ function buscarGif(){
                 function vuelveClase(){
                     tarjetaSearchGif.className= 'tarjetaSearchGif';
                 };
-                //--//
+                //--////
 
             let iconContainer = document.createElement('div');
             iconContainer.setAttribute('class','iconContainer')
