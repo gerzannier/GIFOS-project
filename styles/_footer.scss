@@ -1,0 +1,50 @@
+.footer{
+    width: 100%;
+    padding: 24px 5% 0px;
+    background-color: white;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    #footer-text-compartir{
+        font-family: 'Roboto', arial;
+        font-size: 15px;
+        color: #000000;
+    }
+    .iconcontent{
+        padding-top: 16px;
+        padding-bottom: 31px;
+        width: 100%;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content:center;
+        a{
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #9CAFC3;
+        }
+    }
+    #copiright{
+        font-family: 'Roboto', arial;
+        font-size: 14px;
+        color: #000000;
+    }
+}
+
+
+@media screen and (min-width:750px){
+.footer{
+    padding: 36px 6.9% 31px 6.9%;
+    width: 100%;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    h3{
+        width: auto;
+    }
+    .iconcontent{
+        width: 250px;
+        padding: 0;
+    }
+    #copiright{
+        margin-left: 50%;
+    }
+}}

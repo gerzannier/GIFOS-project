@@ -1,0 +1,155 @@
+.header{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    height: 95px;
+    .logo{
+        position: relative;
+        float: left;
+        display: block;
+        top: 17.2px;
+        left: 5.9%;
+    }
+    ul{
+        top: 34px;
+        position: relative;
+        font-size: 16px;
+        list-style: none;
+        overflow: hidden;
+        background: rgba(87,46,229,0.90);
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        li{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+         :hover{
+             text-decoration: underline #5ED7C6;
+         }
+         :active{
+             color: #9CAFC3 ;
+             text-decoration: none;
+         }
+        a{
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+    span{
+        height: 0.5px;
+        width: 41px;
+        background-color: #FFFFFF;
+    }
+    .masBtn{
+        display:none;
+    }
+ }
+     .menu-icon{
+            position: relative;
+            float: right;
+            cursor: pointer;
+            .nav-icon{
+                background: #572EE5;
+                display: block;
+                top: 45px;
+                right: 19px;
+                height: 2px;
+                width: 18px;
+                position: relative;
+                transition: background .2s ease-out;
+                &:before{
+                     background: #572EE5;
+                     content:"";
+                     display: block;
+                     height: 100%;
+                     width: 100%;
+                     position: absolute;
+                     top:5px;
+                     transition: all .2s ease-out;
+                }
+                &:after{
+                     background: #572EE5;
+                     content:"";
+                     display: block;
+                     height: 100%;
+                     width: 100%;
+                     position: absolute;
+                     top:-5px;
+                     transition: all .2s ease-out;
+
+            }
+            }
+        }
+        .menu-btn{
+            display: none;
+            &:checked ~ .menu{
+                height: 484px;
+             max-height: 484px;                 
+            }  
+            &:checked ~ .menu-icon {  
+                .nav-icon{
+                     background-color: transparent;
+                     &:before{
+                         transform: rotate(-45deg);
+                         top: 0;
+                     }
+                     &:after{
+                         transform: rotate(45deg);
+                         top: 0;
+                     }
+         }
+            
+         } }
+}
+
+@media screen and (min-width:750px){
+    .header{
+        height: 80px;
+        ul{
+            display: flex;
+            flex-flow: row;
+            max-height: none;   
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 100px;
+            li{
+                align-items: center;
+                display: flex;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                font-size: 15px;
+                
+                a{
+                    padding: 24px;
+                    align-items: center;
+                    color: #572EE5 ;
+                }
+                
+        }
+        .masBtn{
+            height: 54px;
+            width: 54px;
+            border-radius: 50%;
+            border: solid 1px #572EE5 ;
+            display: flex;
+            justify-content: center;
+        }}
+        .menu-icon{
+            display: none;
+        }
+        .logo{
+            top: 22px;
+            height: 36px;
+            width: 36px;
+        }
+
+    }}

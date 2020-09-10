@@ -1,0 +1,57 @@
+main{
+    .tarjetaMouseOver{
+        width: 260px;
+        height: 200px;
+        margin: 14px;
+        background-color: #572EE5 ;
+        .searchGif{
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+
+        }
+        .iconContainer{
+            position: relative;
+            top: -200px;
+            left: 120px;
+            display: flex;
+            z-index: 3;
+            .favBtn{
+                height: 20px;
+                width: 20px;
+                background-color: #FFFFFF;
+                border-radius: 10%;
+                margin: 5.5px;
+                padding: 7px ;
+                opacity: 0.6;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            .downBtn{
+                height: 20px;
+                width: 20px;
+                background-color: #FFFFFF;
+                border-radius: 10%;
+                padding: 7px ;
+                margin: 5.5px;
+                opacity: 0.6;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            .expandBtn{
+                height: 20px;
+                width: 20px;
+                background-color: #FFFFFF;
+                border-radius: 10%;
+                padding: 7px ;
+                margin: 5.5px;
+                opacity: 0.6;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

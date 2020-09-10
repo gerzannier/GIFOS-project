@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    body{
+        border-bottom: solid 5px #572EE5 ;
+        border-top: solid 5px #572EE5 ;
+        font-family: 'Montserrat', sans-serif;
+        color: #572EE5;
+        display: flex;
+        flex-flow: wrap;
+        background-color: #FFFFFF;
+        a{
+            color: black;
+        }
+        h1{
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 400;
+            font-size: 36px;
+            letter-spacing: 0;
+            line-height: 42px;
+        }
+        }
+    
+}
