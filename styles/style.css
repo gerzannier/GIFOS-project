@@ -361,6 +361,25 @@ main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif .iconContainer {
   display: none;
 }
 
+main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif .textContainer {
+  display: none;
+  max-width: 100%;
+}
+
+main .seccion1 #verMasSearches {
+  display: none;
+  margin-top: 78px;
+  height: 50px;
+  width: 127px;
+  border: 1px solid #572EE5;
+  color: #572EE5;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-family: 'Montserrat',arial;
+  font-weight: 700;
+  font-size: 13px;
+}
+
 main .seccion2-trending {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,5 +654,35 @@ main .tarjetaMouseOver .iconContainer .expandBtn {
 
 main .tarjetaMouseOver .iconContainer .expandBtn:hover {
   opacity: 1;
+}
+
+main .tarjetaMouseOver .textContainer {
+  position: relative;
+  top: -110px;
+  left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  z-index: 3;
+}
+
+main .tarjetaMouseOver .textContainer .gifUser {
+  font-family: 'Roboto',Arial;
+  font-weight: 300;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+main .tarjetaMouseOver .textContainer .gifTitle {
+  font-family: 'Roboto',Arial;
+  font-weight: 300;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

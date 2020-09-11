@@ -62,13 +62,21 @@ function sideScroll(element,direction,speed,distance,step){
 let userInputBusqueda = document.getElementById('inputBusqueda');
 let searchBtn = document.getElementById('imagenLupa');
 let searchResults = document.getElementById('searchResults');
-searchBtn.addEventListener('click',buscarGif)
 
-function buscarGif(){
+searchBtn.addEventListener('click',nuevaBusqueda);
+
+function nuevaBusqueda(){
+    searchResults.innerHTML='';
+    offsetValue=12 //este valor se usa para el boton ver mas
+    verMasBtn.style.display='block'
+    buscarGif(12,0);
+}
+
+function buscarGif(limit,offset){
     let userInput = userInputBusqueda.value;
 
     async function search() {
-        let url = `${urlSearch}?api_key=${apiKey}&q=${userInput}&limit=${12}&offset=${0}`;
+        let url = `${urlSearch}?api_key=${apiKey}&q=${userInput}&limit=${limit}&offset=${offset}`;
         const respuesta = await fetch(url);
         const resp = await respuesta.json();
         console.log(resp);
@@ -77,8 +85,6 @@ function buscarGif(){
 
     let resp = search()
     resp.then(response => {
-        console.log(response)
-        searchResults.innerHTML='';
         //Inserta titulo de busqueda//
         let searchWord= document.createElement('h1');
         searchWord.textContent= userInput;
@@ -103,7 +109,7 @@ function buscarGif(){
                 function vuelveClase(){
                     tarjetaSearchGif.className= 'tarjetaSearchGif';
                 };
-                //--////
+                //--//
 
             let iconContainer = document.createElement('div');
             iconContainer.setAttribute('class','iconContainer')
@@ -123,17 +129,41 @@ function buscarGif(){
            let expandBtn = document.createElement('img');
            expandBtn.setAttribute('src','/images/assets/icon-max.svg');
            expandBtn.setAttribute('class','expandBtn')
+        
+           let textContainer = document.createElement('div');
+           textContainer.setAttribute('class','textContainer');
+           let gifTitle = document.createElement('h6');
+           gifTitle.setAttribute('class','gifTitle');
+           gifTitle.textContent = response.data[i].title;
+           let gifUser = document.createElement('h6');
+           gifUser.setAttribute('class','gifUser');
+           gifUser.textContent = "user"; /*response.data[i].username;*/
 
 
            searchGifGrid.appendChild(tarjetaSearchGif);
            tarjetaSearchGif.appendChild(gif);
            tarjetaSearchGif.appendChild(iconContainer);
+           tarjetaSearchGif.appendChild(textContainer);
            iconContainer.appendChild(favBtn);
            iconContainer.appendChild(downBtn);
            iconContainer.appendChild(expandBtn);
+           textContainer.appendChild(gifUser);
+           textContainer.appendChild(gifTitle);
            
        };
         });
+}
+
+//--boton ver mas --//
+
+let verMasBtn = document.getElementById('verMasSearches');
+verMasBtn.addEventListener('click',verMas);
+
+let offsetValue=12;
+function verMas(){
+        buscarGif(12,offsetValue);
+        offsetValue =12+offsetValue;
+        console.log(offsetValue)
 }
 
 

@@ -53,5 +53,27 @@ main{
                 }
             }
         }
+        .textContainer{
+            position: relative;
+            top: -110px;
+            left: 10px;
+            display: flex;
+            flex-flow: column;
+            z-index: 3;
+            .gifUser{
+                font-family: 'Roboto',Arial;
+                font-weight: 300;
+                font-size: 15px;
+                color: #FFFFFF;
+                text-align: left;
+            }
+            .gifTitle{
+                font-family: 'Roboto',Arial;
+                font-weight: 300;
+                font-size: 16px;
+                color: #FFFFFF;
+                text-align: left;
+            }
+        }
     }
 }
