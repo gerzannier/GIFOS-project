@@ -1,11 +1,13 @@
 const urlTrend = 'https://api.giphy.com/v1/gifs/trending';
 const urlSearch = 'https://api.giphy.com/v1/gifs/search';
+const urlSuggestions = 'https://api.giphy.com/v1/gifs/search/tags';
+
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
 //TRAER TRENDING GIF AL HOME//
 
 function trendingGif() {
-    let gifCtn = document.getElementById('trendGifContainer');
+    let trendGifContainer = document.getElementById('trendGifContainer');
     let trendQuantity = 10;
     async function trending() {
         let url = `${urlTrend}?api_key=${apiKey}&limit=${trendQuantity}`;
@@ -19,9 +21,10 @@ function trendingGif() {
         for(i=0;i<response.data.length;i++){
              let gif = document.createElement('img');
             gif.setAttribute('src', response.data[i].images.downsized_large.url);
-            gif.setAttribute('class','trendGif')
-            gifCtn.appendChild(gif);
+            gif.setAttribute('class','trendGif') 
+            trendGifContainer.appendChild(gif);
         };
+
 
     })
 }
@@ -168,4 +171,25 @@ function verMas(){
 
 
 
+///SEARCH SUGGESTIONS///
 
+/*
+function suggestions() {
+    let searchTerm = 'ho';
+    async function suggestedGif() {
+        let url = `${urlSuggestions}?api_key=${apiKey}&q=${searchTerm}`;
+        const respuesta = await fetch(url);
+        const resp = await respuesta.json();
+        console.log(resp);
+        return resp;
+    };
+    let resp = suggestedGif()
+    resp.then(response => {
+        let suggestionList = document.createElement('ul')
+        console.log('fiunc')
+
+    })
+}
+
+suggestions()
+*/
