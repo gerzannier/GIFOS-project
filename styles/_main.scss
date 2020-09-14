@@ -20,35 +20,56 @@ main{
             margin-top: 31px;
             width: 72.8%;
         }
-        .busqueda{
-            width: 89%;
+        #busqueda{
             display: flex;
-            align-items: center;
+            flex-flow: column;
+            width: 89%;
             margin-bottom: 31px;
-            #inputBusqueda{
-                height: 50px;
-                width: 100%;
-                border:solid #572EE5 1px;
-                border-radius:27px;
+            border:solid #572EE5 1px;
+            border-radius:27px;
+            align-items: center;
+            #searchBox{
                 display: flex;
-                flex-flow: row;
                 align-items: center;
-                justify-content: space-between;
-                padding-left: 5%;
-
+                width: 100%;
+                #inputBusqueda{
+                    height: 50px;
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-left: 5%;
                     font-family: 'Roboto',Arial;
                     font-weight: 400;
                     font-size: 16px;
                     color: #6B7989;
                     text-align: left;
+                    }
+                    #imagenLupa{
+                        margin-left: -10%;
+                        height: 24px;
+                        width: 24px;
+                        margin-right: 5%;
+                        z-index: 3;
+                    }
+            }
+            #suggestionList{
+                border-top: #9CAFC3 solid 1px;
+                padding-top: 14px;
+                width: 90%;
+                //display: none;
+                .suggestionWord{
+                    display: flex;
+                    flex-flow: row-reverse;
+                    justify-content: flex-end;
+                    img{
+                        margin-right: 14px;
+                    }
                 }
-                #imagenLupa{
-                    margin-left: -10%;
-                    height: 24px;
-                    width: 24px;
-                    margin-right: 5%;
-                    z-index: 3;
-                }
+            }
         }
         #text-trending{
             font-size: 16px;
@@ -159,7 +180,7 @@ main{
         #imgPrincipal{
             width: 28%;
         }
-        .busqueda{
+        #busqueda{
             width: 38%;
             margin-bottom: 73px;
         }

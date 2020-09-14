@@ -269,22 +269,38 @@ main .seccion1 #imgPrincipal {
   width: 72.8%;
 }
 
-main .seccion1 .busqueda {
+main .seccion1 #busqueda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   width: 89%;
+  margin-bottom: 31px;
+  border: solid #572EE5 1px;
+  border-radius: 27px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .seccion1 #busqueda #searchBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 31px;
+  width: 100%;
 }
 
-main .seccion1 .busqueda #inputBusqueda {
+main .seccion1 #busqueda #searchBox #inputBusqueda {
   height: 50px;
   width: 100%;
-  border: solid #572EE5 1px;
-  border-radius: 27px;
+  background-color: transparent;
+  border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,12 +322,35 @@ main .seccion1 .busqueda #inputBusqueda {
   text-align: left;
 }
 
-main .seccion1 .busqueda #imagenLupa {
+main .seccion1 #busqueda #searchBox #imagenLupa {
   margin-left: -10%;
   height: 24px;
   width: 24px;
   margin-right: 5%;
   z-index: 3;
+}
+
+main .seccion1 #busqueda #suggestionList {
+  border-top: #9CAFC3 solid 1px;
+  padding-top: 14px;
+  width: 90%;
+}
+
+main .seccion1 #busqueda #suggestionList .suggestionWord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .seccion1 #busqueda #suggestionList .suggestionWord img {
+  margin-right: 14px;
 }
 
 main .seccion1 #text-trending {
@@ -451,7 +490,7 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .trendGif {
   main .seccion1 #imgPrincipal {
     width: 28%;
   }
-  main .seccion1 .busqueda {
+  main .seccion1 #busqueda {
     width: 38%;
     margin-bottom: 73px;
   }
@@ -684,5 +723,9 @@ main .tarjetaMouseOver .textContainer .gifTitle {
   font-size: 16px;
   color: #FFFFFF;
   text-align: left;
+}
+
+main #inputBusquedaSuggest {
+  background-color: red;
 }
 /*# sourceMappingURL=style.css.map */

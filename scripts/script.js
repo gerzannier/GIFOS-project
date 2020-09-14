@@ -69,7 +69,7 @@ let searchResults = document.getElementById('searchResults');
 searchBtn.addEventListener('click',nuevaBusqueda);
 
 function nuevaBusqueda(){
-    searchResults.innerHTML='';
+    searchResults.innerHTML="";
     offsetValue=12 //este valor se usa para el boton ver mas
     verMasBtn.style.display='block'
     buscarGif(12,0);
@@ -124,6 +124,11 @@ function buscarGif(limit,offset){
            let favBtn = document.createElement('img');
            favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
            favBtn.setAttribute('class','favBtn')
+           let objetoStorage=response.data[i];
+           let keyStorage = response.data[i].id;
+           favBtn.addEventListener('click',()=>{
+            localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
+           })
 
            let downBtn = document.createElement('img');
            downBtn.setAttribute('src','/images/assets/icon-download.svg');
@@ -140,7 +145,7 @@ function buscarGif(limit,offset){
            gifTitle.textContent = response.data[i].title;
            let gifUser = document.createElement('h6');
            gifUser.setAttribute('class','gifUser');
-           gifUser.textContent = "user"; /*response.data[i].username;*/
+           gifUser.textContent = response.data[i].username;
 
 
            searchGifGrid.appendChild(tarjetaSearchGif);
@@ -173,23 +178,50 @@ function verMas(){
 
 ///SEARCH SUGGESTIONS///
 
-/*
+let busquedaSection = document.getElementById('busqueda');
 function suggestions() {
-    let searchTerm = 'ho';
+
+    let searchTerm = userInputBusqueda.value;
     async function suggestedGif() {
         let url = `${urlSuggestions}?api_key=${apiKey}&q=${searchTerm}`;
         const respuesta = await fetch(url);
         const resp = await respuesta.json();
-        console.log(resp);
         return resp;
     };
     let resp = suggestedGif()
     resp.then(response => {
-        let suggestionList = document.createElement('ul')
-        console.log('fiunc')
+        if(document.getElementById('suggestionList')!==null){
+            let borrarDeLista=document.getElementById('suggestionList')
+            borrarDeLista.remove();
+        }
+
+        let suggestionList = document.createElement('ul');
+        suggestionList.setAttribute('id','suggestionList');
+        suggestionList.setAttribute('class','suggestionList');
+        busquedaSection.appendChild(suggestionList);
+        
+
+        for(i=0;i<response.data.length;i++){
+            
+            let suggestionWord = document.createElement('li');
+            suggestionWord.textContent = response.data[i].name;
+            suggestionWord.setAttribute('class','suggestionWord');
+            suggestionWord.addEventListener('click',()=>{
+                userInputBusqueda.value = suggestionWord.textContent;
+                suggestionList.style.display='none';
+                })
+            suggestionList.appendChild(suggestionWord);
+            
+
+            let LupaImg = document.createElement('img');
+            LupaImg.setAttribute('src','/images/assets/icon-search.svg');
+            suggestionWord.appendChild(LupaImg);
+
+        }
+        
 
     })
 }
+userInputBusqueda.addEventListener('keyup',suggestions);
 
-suggestions()
-*/
+//-----------//
