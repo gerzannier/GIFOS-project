@@ -4,6 +4,7 @@ const urlSuggestions = 'https://api.giphy.com/v1/gifs/search/tags';
 
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
+
 //TRAER TRENDING GIF AL HOME//
 
 function trendingGif() {
@@ -19,10 +20,15 @@ function trendingGif() {
     let resp = trending()
     resp.then(response => {
         for(i=0;i<response.data.length;i++){
-             let gif = document.createElement('img');
-            gif.setAttribute('src', response.data[i].images.downsized_large.url);
-            gif.setAttribute('class','trendGif') 
-            trendGifContainer.appendChild(gif);
+            crearGifCards(
+                response.data[i].images.downsized_large.url,//el gif
+                response.data[i], //el objeto para el local storage
+                response.data[i].id, //el id del objeto para el localstorage key
+                response.data[i].title, //titulo
+                response.data[i].username, //username
+                trendGifContainer //a donde se append la tarjeta creada
+                );
+
         };
 
 
@@ -30,6 +36,7 @@ function trendingGif() {
 }
 
 trendingGif()
+
 
 //------BOTONES PARA SCROLL TRENDING GIF-------//
 
@@ -101,63 +108,14 @@ function buscarGif(limit,offset){
         //crea tarjetas gif//
         for(i=0;i<response.data.length;i++){
             
-            let tarjetaSearchGif = document.createElement('div');
-            tarjetaSearchGif.setAttribute('class','tarjetaSearchGif');
-                //--funcion de mouseover para las tarjetas--//
-                tarjetaSearchGif.addEventListener('mouseover',cambiaClase);
-                tarjetaSearchGif.addEventListener('mouseout', vuelveClase);
-                function cambiaClase(){
-                    tarjetaSearchGif.className= 'tarjetaMouseOver';
-                };
-                function vuelveClase(){
-                    tarjetaSearchGif.className= 'tarjetaSearchGif';
-                };
-                //--//
-
-            let iconContainer = document.createElement('div');
-            iconContainer.setAttribute('class','iconContainer')
-
-            let gif = document.createElement('img');
-           gif.setAttribute('src', response.data[i].images.downsized_large.url);
-           gif.setAttribute('class','searchGif')
-
-           let favBtn = document.createElement('img');
-           favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
-           favBtn.setAttribute('class','favBtn')
-           let objetoStorage=response.data[i];
-           let keyStorage = response.data[i].id;
-           favBtn.addEventListener('click',()=>{
-            localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
-           })
-
-           let downBtn = document.createElement('img');
-           downBtn.setAttribute('src','/images/assets/icon-download.svg');
-           downBtn.setAttribute('class','downBtn')
-
-           let expandBtn = document.createElement('img');
-           expandBtn.setAttribute('src','/images/assets/icon-max.svg');
-           expandBtn.setAttribute('class','expandBtn')
-        
-           let textContainer = document.createElement('div');
-           textContainer.setAttribute('class','textContainer');
-           let gifTitle = document.createElement('h6');
-           gifTitle.setAttribute('class','gifTitle');
-           gifTitle.textContent = response.data[i].title;
-           let gifUser = document.createElement('h6');
-           gifUser.setAttribute('class','gifUser');
-           gifUser.textContent = response.data[i].username;
-
-
-           searchGifGrid.appendChild(tarjetaSearchGif);
-           tarjetaSearchGif.appendChild(gif);
-           tarjetaSearchGif.appendChild(iconContainer);
-           tarjetaSearchGif.appendChild(textContainer);
-           iconContainer.appendChild(favBtn);
-           iconContainer.appendChild(downBtn);
-           iconContainer.appendChild(expandBtn);
-           textContainer.appendChild(gifUser);
-           textContainer.appendChild(gifTitle);
-           
+            crearGifCards(
+                response.data[i].images.downsized_large.url,//el gif
+                response.data[i], //el objeto para el local storage
+                response.data[i].id, //el id del objeto para el localstorage key
+                response.data[i].title, //titulo
+                response.data[i].username, //username
+                searchGifGrid //a donde se append la tarjeta creada
+                );
        };
         });
 }
@@ -225,3 +183,13 @@ function suggestions() {
 userInputBusqueda.addEventListener('keyup',suggestions);
 
 //-----------//
+
+//--DESCARGAR GIF--//
+
+function descargarGif (urlDescarga){
+    var x=new XMLHttpRequest();
+    x.open("GET",urlDescarga , true);
+    x.responseType = 'blob';
+    x.onload=function(e){download(x.response, "descarga.gif", "image/gif" ); }
+    x.send();
+};
