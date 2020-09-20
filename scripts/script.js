@@ -193,3 +193,23 @@ function descargarGif (urlDescarga){
     x.onload=function(e){download(x.response, "descarga.gif", "image/gif" ); }
     x.send();
 };
+
+
+//--ABRIR GIF MOBILE--//
+var xw = "Total Width: " + screen.width;
+var xh = "Total height: " + screen.height;
+console.log(xw);
+console.log(xh);
+
+function AbrirGifMobile(){
+if(screen.width < 750){
+    let screen = document.getElementsByTagName('body')[0];
+    let contenedorOpenGif = document.createElement('div');
+    contenedorOpenGif.setAttribute('id','contenedorOpenGif');
+    screen.appendChild(contenedorOpenGif);
+    console.log('ok')
+}else{
+    console.log('ok but no')
+}
+}
+

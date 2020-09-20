@@ -386,23 +386,9 @@ main .seccion1 #searchResults #searchGifGrid {
 }
 
 main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif {
-  width: 156px;
   height: 120px;
-  margin: 12px 2.5%;
-}
-
-main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif .searchGif {
-  width: 100%;
-  height: 100%;
-}
-
-main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif .iconContainer {
-  display: none;
-}
-
-main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif .textContainer {
-  display: none;
-  max-width: 100%;
+  width: 156px;
+  margin: 21px;
 }
 
 main .seccion1 #verMasSearches {
@@ -477,10 +463,15 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer {
       flex-flow: nowrap;
 }
 
-main .seccion2-trending #trends #trendGifBox #trendGifContainer .trendGif {
+main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGif {
   height: 187px;
   width: 243px;
   margin: 22px;
+}
+
+main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGif .searchGif {
+  width: 243px;
+  height: 100%;
 }
 
 @media screen and (min-width: 750px) {
@@ -555,10 +546,14 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .trendGif {
     overflow-y: hidden;
     width: 80%;
   }
-  main .seccion2-trending #trends #trendGifBox #trendGifContainer .trendGif {
+  main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGif {
     height: 275px;
     width: 357px;
-    margin: 29px;
+    margin: 27px;
+  }
+  main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGif .searchGif {
+    width: 357px;
+    height: 100%;
   }
 }
 
@@ -630,102 +625,130 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .trendGif {
   }
 }
 
-main .tarjetaMouseOver {
-  width: 260px;
-  height: 200px;
-  margin: 14px;
-  background-color: #572EE5;
-}
-
-main .tarjetaMouseOver .searchGif {
+main .searchGif {
   width: 100%;
   height: 100%;
-  opacity: 0.6;
+  z-index: 1;
 }
 
-main .tarjetaMouseOver .iconContainer {
-  position: relative;
-  top: -200px;
-  left: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  z-index: 3;
+main .iconContainer {
+  display: none;
 }
 
-main .tarjetaMouseOver .iconContainer .favBtn {
-  height: 20px;
-  width: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10%;
-  margin: 5.5px;
-  padding: 7px;
-  opacity: 0.6;
+main .textContainer {
+  display: none;
+  max-width: 100%;
 }
 
-main .tarjetaMouseOver .iconContainer .favBtn:hover {
-  opacity: 1;
+@media screen and (min-width: 750px) {
+  main .tarjetaMouseOver {
+    width: 260px;
+    height: 200px;
+    margin: 14px;
+    background-color: #572EE5;
+  }
+  main .tarjetaMouseOver .searchGif {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+  }
+  main .tarjetaMouseOver .iconContainer {
+    position: relative;
+    top: -200px;
+    left: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 3;
+  }
+  main .tarjetaMouseOver .iconContainer .favBtn {
+    height: 20px;
+    width: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10%;
+    margin: 5.5px;
+    padding: 7px;
+    opacity: 0.6;
+  }
+  main .tarjetaMouseOver .iconContainer .favBtn:hover {
+    opacity: 1;
+  }
+  main .tarjetaMouseOver .iconContainer .downBtn {
+    height: 20px;
+    width: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10%;
+    padding: 7px;
+    margin: 5.5px;
+    opacity: 0.6;
+  }
+  main .tarjetaMouseOver .iconContainer .downBtn:hover {
+    opacity: 1;
+  }
+  main .tarjetaMouseOver .iconContainer .expandBtn {
+    height: 20px;
+    width: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10%;
+    padding: 7px;
+    margin: 5.5px;
+    opacity: 0.6;
+  }
+  main .tarjetaMouseOver .iconContainer .expandBtn:hover {
+    opacity: 1;
+  }
+  main .tarjetaMouseOver .textContainer {
+    position: relative;
+    top: -110px;
+    left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    z-index: 3;
+  }
+  main .tarjetaMouseOver .textContainer .gifUser {
+    font-family: 'Roboto',Arial;
+    font-weight: 300;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: left;
+  }
+  main .tarjetaMouseOver .textContainer .gifTitle {
+    font-family: 'Roboto',Arial;
+    font-weight: 300;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+  }
+  main #trendGifContainer .tarjetaMouseOver {
+    width: 357px;
+    height: 275px;
+    margin: 27px;
+  }
+  main #trendGifContainer .tarjetaMouseOver .searchGif {
+    width: 357px;
+    height: 100%;
+  }
+  main #trendGifContainer .tarjetaMouseOver .iconContainer {
+    position: relative;
+    top: -275px;
+    left: 220px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 3;
+  }
 }
 
-main .tarjetaMouseOver .iconContainer .downBtn {
-  height: 20px;
-  width: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10%;
-  padding: 7px;
-  margin: 5.5px;
-  opacity: 0.6;
-}
-
-main .tarjetaMouseOver .iconContainer .downBtn:hover {
-  opacity: 1;
-}
-
-main .tarjetaMouseOver .iconContainer .expandBtn {
-  height: 20px;
-  width: 20px;
-  background-color: #FFFFFF;
-  border-radius: 10%;
-  padding: 7px;
-  margin: 5.5px;
-  opacity: 0.6;
-}
-
-main .tarjetaMouseOver .iconContainer .expandBtn:hover {
-  opacity: 1;
-}
-
-main .tarjetaMouseOver .textContainer {
-  position: relative;
-  top: -110px;
-  left: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  z-index: 3;
-}
-
-main .tarjetaMouseOver .textContainer .gifUser {
-  font-family: 'Roboto',Arial;
-  font-weight: 300;
-  font-size: 15px;
-  color: #FFFFFF;
-  text-align: left;
-}
-
-main .tarjetaMouseOver .textContainer .gifTitle {
-  font-family: 'Roboto',Arial;
-  font-weight: 300;
-  font-size: 16px;
-  color: #FFFFFF;
-  text-align: left;
-}
-
-main #inputBusquedaSuggest {
-  background-color: red;
+#contenedorOpenGif {
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
 }
 /*# sourceMappingURL=style.css.map */

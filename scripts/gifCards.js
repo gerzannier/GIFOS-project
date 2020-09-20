@@ -1,13 +1,8 @@
 
-//----------BUCAR GIF------------//
-
-
+//--CREA TARJETAS CONTENEDORAS DEL GIF, LOS ICONOS Y LOS TEXTOS---//
 
 function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,contendorTarjetas){
 {
-
-
-        //crea tarjetas gif//
             
             let tarjetaSearchGif = document.createElement('div');
             tarjetaSearchGif.setAttribute('class','tarjetaSearchGif');
@@ -27,7 +22,10 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
 
             let gif = document.createElement('img');
            gif.setAttribute('src', gifSource);
-           gif.setAttribute('class','searchGif')
+           gif.setAttribute('class','searchGif');
+           gif.addEventListener('click',()=>{
+            AbrirGifMobile()
+           })
 
            let favBtn = document.createElement('img');
            favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
@@ -69,6 +67,5 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
            textContainer.appendChild(gifUser);
            textContainer.appendChild(gifTitle);
            
-       
         };
 }
