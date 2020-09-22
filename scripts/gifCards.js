@@ -24,8 +24,10 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
            gif.setAttribute('src', gifSource);
            gif.setAttribute('class','searchGif');
            gif.addEventListener('click',()=>{
-            AbrirGifMobile()
-           })
+            if(screen.width < 750){
+            AbrirGifMobile(gifSource,favBtn,downBtn,textContainer);
+            }
+           });
 
            let favBtn = document.createElement('img');
            favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
@@ -34,7 +36,7 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
            let keyStorage = storageKeyId;
            favBtn.addEventListener('click',()=>{
             localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
-           })
+           });
 
            let downBtn = document.createElement('img');
            downBtn.setAttribute('src','/images/assets/icon-download.svg');
@@ -45,7 +47,10 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
 
            let expandBtn = document.createElement('img');
            expandBtn.setAttribute('src','/images/assets/icon-max.svg');
-           expandBtn.setAttribute('class','expandBtn')
+           expandBtn.setAttribute('class','expandBtn');
+           expandBtn.addEventListener('click',()=>{
+            AbrirGifMobile(gifSource,favBtn,downBtn,textContainer);
+           });
         
            let textContainer = document.createElement('div');
            textContainer.setAttribute('class','textContainer');

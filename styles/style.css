@@ -745,10 +745,122 @@ main .textContainer {
 }
 
 #contenedorOpenGif {
-  height: 500px;
-  background-color: white;
-  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
   width: 100%;
   z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contenedorOpenGif #cruzClose {
+  height: 24px;
+  width: 24px;
+  margin-top: 10%;
+  margin-bottom: 12.5%;
+  margin-left: 84.5%;
+}
+
+#contenedorOpenGif #openedGif {
+  width: 85%;
+  height: 42%;
+}
+
+#contenedorOpenGif #iconsAndText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  width: 85%;
+  margin-top: 2.5%;
+}
+
+#contenedorOpenGif #iconsAndText .textContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 70%;
+}
+
+#contenedorOpenGif #iconsAndText .textContainer .gifUser {
+  font-family: 'Roboto',arial;
+  font-size: 15px;
+  color: #000000;
+}
+
+#contenedorOpenGif #iconsAndText .textContainer .gifTitle {
+  font-family: 'Montserrat',arial;
+  font-weight: 800;
+  font-size: 16px;
+  color: #000000;
+}
+
+#contenedorOpenGif #iconsAndText .favBtn {
+  height: 36px;
+  width: 36px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+#contenedorOpenGif #iconsAndText .downBtn {
+  height: 36px;
+  width: 36px;
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+  border-radius: 6px;
+}
+
+@media screen and (min-width: 750px) {
+  #contenedorOpenGif {
+    background: white;
+  }
+  #contenedorOpenGif #cruzClose {
+    margin-top: 65px;
+    margin-bottom: 78px;
+    margin-left: 80%;
+  }
+  #contenedorOpenGif #openedGif {
+    width: 48%;
+    height: 385px;
+  }
+  #contenedorOpenGif #iconsAndText {
+    width: 48%;
+    margin-top: 27px;
+  }
+  #contenedorOpenGif #iconsAndText .textContainer {
+    width: 70%;
+  }
+  #contenedorOpenGif #iconsAndText .gifTitle {
+    font-family: 'Roboto',arial;
+    font-weight: 900;
+  }
+  #contenedorOpenGif #iconsAndText .favBtn {
+    height: 36px;
+    width: 36px;
+    margin-right: 5%;
+    margin-left: 15%;
+  }
+  #contenedorOpenGif #iconsAndText .downBtn {
+    height: 36px;
+    width: 36px;
+    opacity: 0.5;
+    border: 1px solid #9CAFC3;
+    border-radius: 6px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

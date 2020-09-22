@@ -195,21 +195,46 @@ function descargarGif (urlDescarga){
 };
 
 
-//--ABRIR GIF MOBILE--//
-var xw = "Total Width: " + screen.width;
-var xh = "Total height: " + screen.height;
-console.log(xw);
+//--ABRIR GIF MOBILE O EXPAND DESKTOP--//
+var xh = screen.height;
 console.log(xh);
+var xw = screen.width;
+console.log(xw);
 
-function AbrirGifMobile(){
-if(screen.width < 750){
+function AbrirGifMobile(gifUrl,iconoFav,iconoDown,textos){//trae directamente los iconos y textos creados en gifCard.js
+    console.log('clickeaste en el gif');
     let screen = document.getElementsByTagName('body')[0];
+
     let contenedorOpenGif = document.createElement('div');
     contenedorOpenGif.setAttribute('id','contenedorOpenGif');
+    if(xw > 750){
+        contenedorOpenGif.style.height= xh +200 +'px';//se agrega px para asegurar que el contenedor cubra toda la pantalla
+        }else{
+    contenedorOpenGif.style.height= xh +'px';
+        };
+
+    let cruzClose = document.createElement('img');
+    cruzClose.setAttribute('src','/images/assets/button-close.svg');
+    cruzClose.setAttribute('id','cruzClose');
+    cruzClose.addEventListener('click',()=>{
+        contenedorOpenGif.remove();
+    })
+
+    let openedGif = document.createElement('img');
+    openedGif.setAttribute('src',gifUrl);
+    openedGif.setAttribute('id','openedGif');
+    
+    let iconsAndText = document.createElement('div');
+    iconsAndText.setAttribute('id','iconsAndText');
+
     screen.appendChild(contenedorOpenGif);
-    console.log('ok')
-}else{
-    console.log('ok but no')
-}
-}
+    contenedorOpenGif.appendChild(cruzClose);
+    contenedorOpenGif.appendChild(openedGif);
+    contenedorOpenGif.appendChild(iconsAndText);
+    iconsAndText.appendChild(textos);
+    iconsAndText.appendChild(iconoFav);
+    iconsAndText.appendChild(iconoDown);
+
+
+};
 
