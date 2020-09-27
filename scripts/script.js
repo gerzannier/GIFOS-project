@@ -5,6 +5,16 @@ const urlGifsById ='https://api.giphy.com/v1/gifs';
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
 
+//CLICK A HOME//
+let seccionTrending = document.getElementById('seccion2-trending');
+let homeLogo=document.getElementById('logo');
+homeLogo.addEventListener('click',()=>{
+    seccion1Busquedas.style.display='flex';
+    seccionFavoritos.style.display='none';
+    seccion4CreaGifo.style.display='none';
+    seccionTrending.style.display='flex';
+})
+
 //TRAER TRENDING GIF AL HOME//
 
 function trendingGif() {
@@ -245,17 +255,27 @@ let favMenu = document.getElementById('favMenu');
 favMenu.addEventListener('click',()=>{
     seccion1Busquedas.style.display='none';
     seccionFavoritos.style.display='flex';
+    seccion4CreaGifo.style.display='none';
     crearFavoritos();
 })
 
 function crearFavoritos(){
-seccionFavoritos.innerHTML="";
-let favoriteGifGrid= document.createElement('div');
-favoriteGifGrid.setAttribute('id','favoriteGifGrid');
-seccionFavoritos.appendChild(favoriteGifGrid);
-
+let favoriteGifGrid= document.getElementById('favoriteGifGrid');
+favoriteGifGrid.innerHTML="";
 
 keys = Object.keys(localStorage);//get IDs from local storage
+
+//eliminar texto de sin favoritos cuando corresponde//
+let noFavImg = document.getElementById('noFavImg');
+let noFavText = document.getElementById('h1Guarda');
+if(keys.length>0){
+    noFavImg.style.display="none";
+    noFavText.style.display="none";
+}else{
+    noFavImg.style.display="flex";
+    noFavText.style.display="flex";
+}
+///traer favoritos con un fetch usando las key store que son el id//
     async function getFavoritos() {
         let url = `${urlGifsById}?api_key=${apiKey}&ids=${keys}`;
         const respuesta = await fetch(url);
@@ -277,3 +297,14 @@ keys = Object.keys(localStorage);//get IDs from local storage
         };
     })
 } 
+
+//--CREAR TU PROPIO GIF --//
+
+let seccion4CreaGifo = document.getElementById('seccion4-creaGifo');
+let botonMas = document.getElementById('masBtn');
+botonMas.addEventListener('click',()=>{
+    seccion1Busquedas.style.display='none';
+    seccionFavoritos.style.display='none';
+    seccion4CreaGifo.style.display='flex';
+    seccionTrending.style.display='none';
+})

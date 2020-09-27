@@ -1,8 +1,70 @@
 main{
     #seccion-favoritos{
         display: none;
-        min-height: 400px;
-        border: solid red 3px;
+        flex-flow: column;
+        align-items: center;
+        #corazonImg{
+            width: 28px;
+            height: 21px;
+        }
+        #h1Favoritos{
+            font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 25px;
+            color: #572EE5;
+            text-align: center;
+        }
+        #noFavImg{
+            width: 120px;
+            height: 120px;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+        #h1Guarda{
+            width: 90%;
+            font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            color: #50E3C2;
+            text-align: center;
+        }
+        #favoriteGifGrid{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            .tarjetaSearchGif{
+                height: 120px;
+                width: 156px;
+                margin: 10px;
+            }
+        }
 
     }
+}
+
+@media screen and (min-width:750px){
+main{
+    #seccion-favoritos{
+        #corazonImg{
+            margin-top: 11px;
+        }
+        #noFavImg{
+            width: 150px;
+            height: 150px;
+            margin-top: 110px;
+            margin-bottom: 24px;
+        }
+        #h1Guarda{
+            width: 40%;
+        }
+        #favoriteGifGrid{
+            .tarjetaSearchGif{
+                width: 260px;
+                height: 200px;
+                margin: 14px;
+            }
+        }
+
+    }
+}
 }

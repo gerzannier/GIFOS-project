@@ -30,12 +30,22 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
            });
 
            let favBtn = document.createElement('img');
-           favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
            favBtn.setAttribute('class','favBtn')
            let objetoStorage=storageInfo;
            let keyStorage = storageKeyId;
+           if(localStorage.getItem(keyStorage) === null){ //checkear si existe en local storage para asignar el corazon pintado o no
+            favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
+           }else{
+            favBtn.setAttribute('src','/images/assets/icon-fav-active.svg')
+           }
            favBtn.addEventListener('click',()=>{
-            localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
+               if(localStorage.getItem(keyStorage) === null){
+                   localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
+                   favBtn.setAttribute('src','/images/assets/icon-fav-active.svg');
+               }else{
+                favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
+                localStorage.removeItem(keyStorage);     
+                 }
            });
 
            let downBtn = document.createElement('img');

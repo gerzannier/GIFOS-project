@@ -20,7 +20,7 @@
             <li><a href="#episodios">MODO NOCTURNO </a><span id='underLine'></span></li>
             <li><a href="#dedonde" id="favMenu">FAVORITOS</a><span id='underLine'></span></li>
             <li><a href="#invitadas">MIS GIFOS</a><span id='underLine'></span></li>
-            <div class="masBtn">
+            <div class="masBtn" id="masBtn">
                 <img src="/images/assets/button-crear-gifo.svg" alt="boton-mas">
             </div>
         </ul>
@@ -41,9 +41,14 @@
             <button id="verMasSearches">VER MÁS</button>
         </section>
         <section id="seccion-favoritos">
-
+            <img src="/images/assets/icon-favoritos.svg" alt="corazon" id="corazonImg">
+            <h1 id="h1Favoritos">Favoritos</h1>
+            <img src="/images/assets/icon-fav-sin-contenido.svg" alt="noFav" id="noFavImg" class="noFav">
+            <h1 id="h1Guarda" class="noFav">"¡Guarda tu primer GIFO en Favoritos 
+                para que se muestre aquí!" </h1>
+            <div id="favoriteGifGrid"></div>
         </section>
-        <section class="seccion2-trending">
+        <section class="seccion2-trending" id="seccion2-trending">
             <h1 id="seccion2-text-trending">Trending GIFOS</h1>
             <h5 id="seccion2-text-mira">Mira los últimos GIFOS de nuestra comunidad.</h5>
             <div id="trends">
@@ -53,7 +58,8 @@
                 </div>
                 <div id="slideBtn"><img src="/images/assets/button-right.svg" alt="slide"></div>
             </div>
-            
+        </section>
+        <section id="seccion4-creaGifo">
 
         </section>
     </main>
