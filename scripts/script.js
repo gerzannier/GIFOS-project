@@ -1,7 +1,7 @@
 const urlTrend = 'https://api.giphy.com/v1/gifs/trending';
 const urlSearch = 'https://api.giphy.com/v1/gifs/search';
 const urlSuggestions = 'https://api.giphy.com/v1/gifs/search/tags';
-
+const urlGifsById ='https://api.giphy.com/v1/gifs';
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
 
@@ -234,7 +234,46 @@ function AbrirGifMobile(gifUrl,iconoFav,iconoDown,textos){//trae directamente lo
     iconsAndText.appendChild(textos);
     iconsAndText.appendChild(iconoFav);
     iconsAndText.appendChild(iconoDown);
-
-
 };
 
+
+//---MOSTRAR Y CARGAR FAVORITOS----//
+
+let seccion1Busquedas=document.getElementById('seccion1');
+let seccionFavoritos=document.getElementById('seccion-favoritos')
+let favMenu = document.getElementById('favMenu');
+favMenu.addEventListener('click',()=>{
+    seccion1Busquedas.style.display='none';
+    seccionFavoritos.style.display='flex';
+    crearFavoritos();
+})
+
+function crearFavoritos(){
+seccionFavoritos.innerHTML="";
+let favoriteGifGrid= document.createElement('div');
+favoriteGifGrid.setAttribute('id','favoriteGifGrid');
+seccionFavoritos.appendChild(favoriteGifGrid);
+
+
+keys = Object.keys(localStorage);//get IDs from local storage
+    async function getFavoritos() {
+        let url = `${urlGifsById}?api_key=${apiKey}&ids=${keys}`;
+        const respuesta = await fetch(url);
+        const resp = await respuesta.json();
+        console.log(resp);
+        return resp;
+    };
+    let resp = getFavoritos()
+    resp.then(response => {
+        for(i=0;i<response.data.length;i++){
+            crearGifCards(
+                response.data[i].images.downsized_large.url,//el gif
+                response.data[i], //el objeto para el local storage
+                response.data[i].id, //el id del objeto para el localstorage key
+                response.data[i].title, //titulo
+                response.data[i].username, //username
+                favoriteGifGrid //a donde se append la tarjeta creada
+                );
+        };
+    })
+} 

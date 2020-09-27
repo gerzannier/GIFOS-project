@@ -372,6 +372,9 @@ main .seccion1 #searchResults {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .seccion1 #searchResults #searchGifGrid {
@@ -388,7 +391,7 @@ main .seccion1 #searchResults #searchGifGrid {
 main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif {
   height: 120px;
   width: 156px;
-  margin: 21px;
+  margin: 10px;
 }
 
 main .seccion1 #verMasSearches {
@@ -490,6 +493,9 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGi
   }
   main .seccion1 #text-reactions {
     font-size: 16px;
+  }
+  main .seccion1 #searchResults #searchGifGrid {
+    width: 80%;
   }
   main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif {
     width: 260px;
@@ -862,5 +868,11 @@ main .textContainer {
     border: 1px solid #9CAFC3;
     border-radius: 6px;
   }
+}
+
+main #seccion-favoritos {
+  display: none;
+  min-height: 400px;
+  border: solid red 3px;
 }
 /*# sourceMappingURL=style.css.map */

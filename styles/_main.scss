@@ -83,6 +83,7 @@ main{
         #searchResults{
             display: flex;
             flex-flow: column;
+            align-items: center;
             #searchGifGrid{
                 display: flex;
                 flex-flow: wrap;
@@ -90,7 +91,7 @@ main{
                 .tarjetaSearchGif{
                     height: 120px;
                     width: 156px;
-                    margin: 21px;
+                    margin: 10px;
                 }
 
             }
@@ -185,7 +186,9 @@ main{
             font-size: 16px;
         }
         #searchResults{
+
             #searchGifGrid{
+                width: 80%;
                 .tarjetaSearchGif{
                     width: 260px;
                     height: 200px;
