@@ -949,7 +949,179 @@ main #seccion-favoritos #favoriteGifGrid .tarjetaSearchGif {
 
 main #seccion4-creaGifo {
   display: none;
-  min-height: 600px;
-  border: red solid 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #seccion4-creaGifo #camCuadro {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 25% 50% 25%;
+      grid-template-columns: 25% 50% 25%;
+  width: 100%;
+  height: 390px;
+}
+
+main #seccion4-creaGifo #camCuadro #imgCamara {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 165px;
+  justify-self: end;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid 1px #572EE5;
+  height: 100%;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 320px;
+  width: 70%;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles #l1 {
+  border-bottom: none;
+  border-right: none;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles #l2 {
+  border-top: none;
+  border-right: none;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles #l3 {
+  border-bottom: none;
+  border-left: none;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles #l4 {
+  border-top: none;
+  border-left: none;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo .detalleL {
+  height: 25px;
+  width: 25px;
+  margin: 20px;
+  border: solid 1px #50E3C2;
+}
+
+main #seccion4-creaGifo #comandosVideo {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 22.5% 55% 22.5%;
+      grid-template-columns: 22.5% 55% 22.5%;
+  width: 100%;
+}
+
+main #seccion4-creaGifo #comandosVideo #contenedorBtn {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  border-bottom: solid 4px #572EE5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 40% 30%;
+      grid-template-columns: 30% 40% 30%;
+}
+
+main #seccion4-creaGifo #comandosVideo #contenedorBtn #botones {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #seccion4-creaGifo #comandosVideo #contenedorBtn #botones .botoncitos {
+  height: 32px;
+  width: 32px;
+  border: solid 1px #572EE5;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  margin: 14px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #572EE5;
+}
+
+main #seccion4-creaGifo #comandosVideo #contenedorBtn #reloj {
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: #572EE5;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main #seccion4-creaGifo #comandosVideo #imgCinta {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  width: 87px;
+  height: 87px;
+}
+
+main #seccion4-creaGifo #crearGifoBtn {
+  width: 127px;
+  height: 50px;
+  border: 1px solid #572EE5;
+  color: #572EE5;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-family: 'Montserrat',arial;
+  font-weight: 700;
+  font-size: 13px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,117 @@
 main{
     #seccion4-creaGifo{
         display: none;
-        min-height: 600px;
-        border: red solid 5px;
+        flex-flow: column;
+        align-items: center;
+        #camCuadro{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 25% 50% 25%;
+            width: 100%;
+            height: 390px;
+            #imgCamara{
+                grid-column: 1;
+                display: flex;
+                height: 165px;
+                justify-self: end;
+            }
+            #recuadroVideo{
+                grid-column:2;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: solid 1px #572EE5 ;
+                height: 100%;
+                #contenido{
+                    display: flex;
+                    justify-content: center;
+                    height: 320px;
+                    width: 70%;
+                }
+                .detalles{
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: space-between;
+                    height: 100%;
+                    #l1{
+                        border-bottom: none;
+                        border-right: none;
+                    }
+                    #l2{
+                        border-top: none;
+                        border-right: none;
+                    }
+                    #l3{
+                        border-bottom: none;
+                        border-left: none;
+                    }
+                    #l4{
+                        border-top: none;
+                        border-left: none;
+                    }
+                }
+                .detalleL{
+                    height: 25px;
+                    width: 25px;
+                    margin: 20px;
+                    border: solid 1px #50E3C2 ;
+                }
+            }
+        }
+        #comandosVideo{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 22.5% 55% 22.5%;
+            width: 100%;
+            #contenedorBtn{
+                grid-column: 2;
+                border-bottom: solid 4px #572EE5;
+                display: grid;
+                grid-template-columns: 30% 40% 30%;
+                #botones{
+                    grid-column: 2;
+                    justify-self: center;
+                    display: flex;
+                    .botoncitos{
+                        height: 32px;
+                        width: 32px;
+                        border: solid 1px #572EE5 ;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 32px;
+                        margin: 14px;
+                        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #572EE5;
+                    }
+                }
+                #reloj{
+                    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+                    font-weight: 800;
+                    font-size: 13px;
+                    color: #572EE5;
+                    grid-column: 3;
+                    justify-self: center;
+                    align-self: center;
+                }
+            }
+            #imgCinta{
+                grid-column: 3;
+                width: 87px;
+                height: 87px;
+            }
+        }
+        #crearGifoBtn{
+            width: 127px;
+            height: 50px;
+            border: 1px solid #572EE5;
+            color: #572EE5;
+            border-radius: 25px;
+            background-color: #ffffff;
+            font-family: 'Montserrat',arial;
+            font-weight: 700;
+            font-size: 13px;
+        }
     }
 }
