@@ -1007,6 +1007,20 @@ main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido {
   width: 70%;
 }
 
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #video {
+  display: none;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
 main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1113,7 +1127,7 @@ main #seccion4-creaGifo #comandosVideo #imgCinta {
   height: 87px;
 }
 
-main #seccion4-creaGifo #crearGifoBtn {
+main #seccion4-creaGifo .crearGifoBtn {
   width: 127px;
   height: 50px;
   border: 1px solid #572EE5;
@@ -1123,5 +1137,10 @@ main #seccion4-creaGifo #crearGifoBtn {
   font-family: 'Montserrat',arial;
   font-weight: 700;
   font-size: 13px;
+  display: none;
+}
+
+main #seccion4-creaGifo #comenzarBtn {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

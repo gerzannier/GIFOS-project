@@ -27,6 +27,16 @@ main{
                     justify-content: center;
                     height: 320px;
                     width: 70%;
+                    #video{
+                        display: none;
+                    }
+                    #textosGrabar{
+                        display: flex;
+                        flex-flow: column;
+                        #textosGrabarH1{
+
+                        }
+                    }
                 }
                 .detalles{
                     display: flex;
@@ -102,7 +112,7 @@ main{
                 height: 87px;
             }
         }
-        #crearGifoBtn{
+        .crearGifoBtn{
             width: 127px;
             height: 50px;
             border: 1px solid #572EE5;
@@ -112,6 +122,10 @@ main{
             font-family: 'Montserrat',arial;
             font-weight: 700;
             font-size: 13px;
+            display: none;
+        }
+        #comenzarBtn{
+            display: block;
         }
     }
 }

@@ -71,6 +71,10 @@
                         <span id="l2" class="detalleL"></span>
                     </div>
                     <div id="contenido">
+                        <div id="textosGrabar">
+                            <h1 id="textoGrabarH1">Aquí podrás crear tus propios <span>GIFOS</span></h1>
+                            <h5  id="textoGrabarH5"></h5>¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)</h5>
+                        </div>
                         <video id="video" src=""></video>
                     </div>
                     <div id="detallesDer" class="detalles">
@@ -92,7 +96,10 @@
                 <img src="/images/assets/element_cinta2.svg" alt="cinta" id="imgCinta">
 
             </div>
-            <button id="crearGifoBtn">COMENZAR</button>
+            <button id="comenzarBtn" class="crearGifoBtn">COMENZAR</button>
+            <button id="grabarBtn" class="crearGifoBtn">GRABAR</button>
+            <button id="finalizarBtn" class="crearGifoBtn">FINALIZAR</button>
+            <button id="subirGifBtn" class="crearGifoBtn">SUBIR GIFO</button>
 
         </section>
     </main>
@@ -109,6 +116,7 @@
 
 
     <script src="https://kit.fontawesome.com/7024e633d7.js" crossorigin="anonymous"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src='/scripts/script.js'></script>
     <script src="/scripts/download.js"></script>
     <script src="/scripts/gifCards.js"></script>
