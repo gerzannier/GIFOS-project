@@ -46,11 +46,9 @@ function activarCamara() {
     });
 };
 
-//Iniciar y finalizar grabacion//
+//Iniciar grabacion//
 
 function grabando(stream){
-
-    
     let recorder = new RecordRTC(stream,{
         type: 'gif',
         frameRate: 1,
@@ -58,25 +56,32 @@ function grabando(stream){
         width: 360,
         hidden: 240,  
       });
-    
     grabarBtn.addEventListener('click',()=>{
         video.play();
         recorder.startRecording();
-        //timer();
+        timerStart();
         console.log(recorder.state);
+        chronometerDisplay.style.display='block';
         grabarBtn.style.display='none';
         finalizarBtn.style.display='block';
         return
-    })
+    });
+    //finalizar grabacion//
     finalizarBtn.addEventListener('click',()=>{
         video.pause();
         recorder.stopRecording();
+        console.log('antes del stop');
+        timerStop();
+        console.log('despues del stop');
         console.log(recorder.state);
+        chronometerDisplay.textContent='REPETIR CAPTURA';
+        chronometerDisplay.style.borderBottom = 'solid 2px #5ED7C6';
         finalizarBtn.style.display='none';
         subirGifBtn.style.display='block';
         return
     });
     
+    //subir gif//
     subirGifBtn.addEventListener('click',()=>{
         
         subirGifBtn.style.display='none';

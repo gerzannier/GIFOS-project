@@ -1003,6 +1003,9 @@ main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 320px;
   width: 70%;
 }
@@ -1019,6 +1022,26 @@ main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar #textoGrabarH1 {
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  color: #572EE5;
+  text-align: center;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar #textoGrabarH1 span {
+  color: #50E3C2;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar #textoGrabarH5 {
+  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  line-height: 29px;
 }
 
 main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles {
@@ -1107,6 +1130,7 @@ main #seccion4-creaGifo #comandosVideo #contenedorBtn #botones .botoncitos {
 }
 
 main #seccion4-creaGifo #comandosVideo #contenedorBtn #reloj {
+  display: none;
   font-family: 'Montserrat',Arial, Helvetica, sans-serif;
   font-weight: 800;
   font-size: 13px;
