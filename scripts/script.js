@@ -33,7 +33,7 @@ function trendingGif() {
             crearGifCards(
                 response.data[i].images.downsized_large.url,//el gif
                 response.data[i], //el objeto para el local storage
-                response.data[i].id, //el id del objeto para el localstorage key
+                response.data[i].id, //el id del objeto para el localstorage
                 response.data[i].title, //titulo
                 response.data[i].username, //username
                 trendGifContainer //a donde se append la tarjeta creada
@@ -249,6 +249,7 @@ function AbrirGifMobile(gifUrl,iconoFav,iconoDown,textos){//trae directamente lo
 
 //---MOSTRAR Y CARGAR FAVORITOS----//
 
+
 let seccion1Busquedas=document.getElementById('seccion1');
 let seccionFavoritos=document.getElementById('seccion-favoritos')
 let favMenu = document.getElementById('favMenu');
@@ -257,18 +258,20 @@ favMenu.addEventListener('click',()=>{
     seccionFavoritos.style.display='flex';
     seccion4CreaGifo.style.display='none';
     crearFavoritos();
-})
+});
+
+var favoritosKey = "favoritos";
+var favoritosIdArray = JSON.parse(localStorage.getItem(favoritosKey)); //el array con los ID defavoritos ya almacenados
 
 function crearFavoritos(){
 let favoriteGifGrid= document.getElementById('favoriteGifGrid');
 favoriteGifGrid.innerHTML="";
 
-keys = Object.keys(localStorage);//get IDs from local storage
 
 //eliminar texto de sin favoritos cuando corresponde//
 let noFavImg = document.getElementById('noFavImg');
 let noFavText = document.getElementById('h1Guarda');
-if(keys.length>0){
+if(favoritosIdArray.length>0){
     noFavImg.style.display="none";
     noFavText.style.display="none";
 }else{
@@ -277,7 +280,7 @@ if(keys.length>0){
 }
 ///traer favoritos con un fetch usando las key store que son el id//
     async function getFavoritos() {
-        let url = `${urlGifsById}?api_key=${apiKey}&ids=${keys}`;
+        let url = `${urlGifsById}?api_key=${apiKey}&ids=${favoritosIdArray}`;
         const respuesta = await fetch(url);
         const resp = await respuesta.json();
         console.log(resp);
@@ -288,7 +291,7 @@ if(keys.length>0){
         for(i=0;i<response.data.length;i++){
             crearGifCards(
                 response.data[i].images.downsized_large.url,//el gif
-                response.data[i], //el objeto para el local storage
+                favoritosIdArray, //el objeto para el local storage
                 response.data[i].id, //el id del objeto para el localstorage key
                 response.data[i].title, //titulo
                 response.data[i].username, //username

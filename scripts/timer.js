@@ -30,15 +30,19 @@
   
     }
   
-    function timerStart() {
-      chronometerCall = setInterval(chronometer, 1000);
-      console.log(seconds)
-    };
+    grabarBtn.addEventListener('click',()=>{
+        chronometerCall = setInterval(chronometer, 1000);
+        chronometerDisplay.style.display='block';
+        console.log('timer start')
+    });
   
-    function timerStop() {
-      clearInterval(chronometerCall);
-      console.log(seconds)
-    };
+    finalizarBtn.addEventListener('click',()=>{
+        clearInterval(chronometerCall);
+        console.log('timer stop')
+        chronometerDisplay.textContent='REPETIR CAPTURA';
+        chronometerDisplay.style.borderBottom = 'solid 2px #5ED7C6';
+    });
+
   
     function timerReset()  {
       clearInterval(chronometerCall)
@@ -54,7 +58,7 @@
           boton2.style.backgroundColor='#FFFFFF';
           boton2.style.color='#572EE5'; 
           subirGifBtn.style.display='none';  
-          timerReset()
-          activarCamara()
+          timerReset();
+          activarCamara();
       }
 });

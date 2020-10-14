@@ -1044,6 +1044,42 @@ main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textosGrabar #text
   line-height: 29px;
 }
 
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #uploadImg {
+  display: none;
+  position: absolute;
+  top: 33%;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textoSubiendo {
+  display: none;
+  position: absolute;
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #iconosUploadedGif {
+  display: none;
+  position: absolute;
+  top: 18vh;
+  right: 37vw;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #iconosUploadedGif .IconosGifCreado {
+  height: 20px;
+  width: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10%;
+  padding: 7px;
+  margin: 5.5px;
+  opacity: 0.6;
+}
+
+main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #iconosUploadedGif .IconosGifCreado:hover {
+  opacity: 1;
+}
+
 main #seccion4-creaGifo #camCuadro #recuadroVideo .detalles {
   display: -webkit-box;
   display: -ms-flexbox;

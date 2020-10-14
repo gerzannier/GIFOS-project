@@ -12,6 +12,8 @@ let subirGifBtn = document.getElementById('subirGifBtn');
 let comenzarBtn = document.getElementById('comenzarBtn');
 comenzarBtn.addEventListener('click', activarCamara);
 
+let returnData ="";
+
 //Solicitar permiso para activar camara y mostrar en pantalla
 function activarCamara() {
     comenzarBtn.style.display='none';
@@ -47,7 +49,6 @@ function activarCamara() {
 };
 
 //Iniciar grabacion//
-
 function grabando(stream){
     let recorder = new RecordRTC(stream,{
         type: 'gif',
@@ -59,9 +60,7 @@ function grabando(stream){
     grabarBtn.addEventListener('click',()=>{
         video.play();
         recorder.startRecording();
-        timerStart();
         console.log(recorder.state);
-        chronometerDisplay.style.display='block';
         grabarBtn.style.display='none';
         finalizarBtn.style.display='block';
         return
@@ -70,12 +69,7 @@ function grabando(stream){
     finalizarBtn.addEventListener('click',()=>{
         video.pause();
         recorder.stopRecording();
-        console.log('antes del stop');
-        timerStop();
-        console.log('despues del stop');
         console.log(recorder.state);
-        chronometerDisplay.textContent='REPETIR CAPTURA';
-        chronometerDisplay.style.borderBottom = 'solid 2px #5ED7C6';
         finalizarBtn.style.display='none';
         subirGifBtn.style.display='block';
         return
@@ -83,7 +77,12 @@ function grabando(stream){
     
     //subir gif//
     subirGifBtn.addEventListener('click',()=>{
-        
+
+        let uploadImg = document.getElementById('uploadImg');
+        let textoSubiendo= document.getElementById('textoSubiendo');
+        uploadImg.style.display = 'block';
+        textoSubiendo.style.display = 'block';
+
         subirGifBtn.style.display='none';
         boton2.style.backgroundColor='#FFFFFF';
         boton2.style.color='#572EE5';
@@ -104,12 +103,15 @@ function grabando(stream){
         })
         .then(
         response =>{
-        let data = response.json();
-        console.log(data);
-        }
-        )       
+        data = response.json();
+        console.log(data); 
+        uploadImg.src='/images/assets/ok.svg';
+        textoSubiendo.textContent = "GIFO subido con éxito";
+        iconosUploadedGif = document.getElementById('iconosUploadedGif');
+        iconosUploadedGif.style.display='flex';
+        });             
     
-})
+    })
 
 };
 

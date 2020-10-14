@@ -28,25 +28,17 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
             AbrirGifMobile(gifSource,favBtn,downBtn,textContainer);
             }
            });
+           //--------------//
+          let favBtn = document.createElement('img');
+          favBtn.setAttribute('class','favBtn');
+          
+          favBtn.addEventListener('click',()=>{
+            SaveLocalStorage(favoritosIdArray, favoritosKey, storageKeyId);
+            crearFavoritos();
+          });
+          
 
-           let favBtn = document.createElement('img');
-           favBtn.setAttribute('class','favBtn')
-           let objetoStorage=storageInfo;
-           let keyStorage = storageKeyId;
-           if(localStorage.getItem(keyStorage) === null){ //checkear si existe en local storage para asignar el corazon pintado o no
-            favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
-           }else{
-            favBtn.setAttribute('src','/images/assets/icon-fav-active.svg')
-           }
-           favBtn.addEventListener('click',()=>{
-               if(localStorage.getItem(keyStorage) === null){
-                   localStorage.setItem(keyStorage, JSON.stringify(objetoStorage));
-                   favBtn.setAttribute('src','/images/assets/icon-fav-active.svg');
-               }else{
-                favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
-                localStorage.removeItem(keyStorage);     
-                 }
-           });
+          //---------------//
 
            let downBtn = document.createElement('img');
            downBtn.setAttribute('src','/images/assets/icon-download.svg');
