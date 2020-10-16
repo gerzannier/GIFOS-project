@@ -1,0 +1,70 @@
+main{
+    #seccion-misGifos{
+        display: none;
+        flex-flow: column;
+        align-items: center;
+        #faceImg{
+            width: 28px;
+            height: 21px;
+        }
+        #h1MisGifos{
+            font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 25px;
+            color: #572EE5;
+            text-align: center;
+        }
+        #noMisGifosImg{
+            width: 120px;
+            height: 120px;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+        #h1Animate{
+            width: 90%;
+            font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            color: #50E3C2;
+            text-align: center;
+        }
+        #misGifGrid{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            .tarjetaSearchGif{
+                height: 120px;
+                width: 156px;
+                margin: 10px;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width:750px){
+main{
+    #seccion-misGifos{
+        #faceImg{
+            margin-top: 11px;
+        }
+        #noMisGifosImg{
+            width: 150px;
+            height: 150px;
+            margin-top: 110px;
+            margin-bottom: 24px;
+        }
+        #h1Animate{
+            width: 40%;
+        }
+        #misGifGrid{
+            .tarjetaSearchGif{
+                width: 260px;
+                height: 200px;
+                margin: 14px;
+            }
+        }
+
+    }
+}
+}

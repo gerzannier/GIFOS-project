@@ -31,10 +31,26 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
            //--------------//
           let favBtn = document.createElement('img');
           favBtn.setAttribute('class','favBtn');
+          favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg');
+          if(favoritosIdArray!=null){
+            for(let j=0;j<favoritosIdArray.length;j++){ //si existe en local storage corazon pintado
+                if(favoritosIdArray[j]==storageKeyId){
+                    favBtn.setAttribute('src','/images/assets/icon-fav-Active.svg');
+                }
+            }
+          };
+          
           
           favBtn.addEventListener('click',()=>{
-            SaveLocalStorage(favoritosIdArray, favoritosKey, storageKeyId);
-            crearFavoritos();
+              SaveLocalStorage(favoritosIdArray, favoritosKey, storageKeyId);
+              crearFavoritos();
+            if(favoritosIdArray!=null){
+                for(let j=0;j<favoritosIdArray.length;j++){ //si existe en local storage corazon pintado
+                    if(favoritosIdArray[j]==storageKeyId){
+                        favBtn.setAttribute('src','/images/assets/icon-fav-Active.svg');
+                    }else{favBtn.setAttribute('src','/images/assets/icon-fav-hover.svg')}
+                }
+              };
           });
           
 

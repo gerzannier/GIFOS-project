@@ -13,6 +13,7 @@ homeLogo.addEventListener('click',()=>{
     seccionFavoritos.style.display='none';
     seccion4CreaGifo.style.display='none';
     seccionTrending.style.display='flex';
+    seccionMisGifos.style.display='none';
 })
 
 //TRAER TRENDING GIF AL HOME//
@@ -252,11 +253,13 @@ function AbrirGifMobile(gifUrl,iconoFav,iconoDown,textos){//trae directamente lo
 
 let seccion1Busquedas=document.getElementById('seccion1');
 let seccionFavoritos=document.getElementById('seccion-favoritos')
+let seccionMisGifos=document.getElementById('seccion-misGifos');
 let favMenu = document.getElementById('favMenu');
 favMenu.addEventListener('click',()=>{
     seccion1Busquedas.style.display='none';
     seccionFavoritos.style.display='flex';
     seccion4CreaGifo.style.display='none';
+    seccionMisGifos.style.display='none';
     crearFavoritos();
 });
 
@@ -271,7 +274,7 @@ favoriteGifGrid.innerHTML="";
 //eliminar texto de sin favoritos cuando corresponde//
 let noFavImg = document.getElementById('noFavImg');
 let noFavText = document.getElementById('h1Guarda');
-if(favoritosIdArray.length>0){
+if(favoritosIdArray!=null){
     noFavImg.style.display="none";
     noFavText.style.display="none";
 }else{
@@ -283,7 +286,6 @@ if(favoritosIdArray.length>0){
         let url = `${urlGifsById}?api_key=${apiKey}&ids=${favoritosIdArray}`;
         const respuesta = await fetch(url);
         const resp = await respuesta.json();
-        console.log(resp);
         return resp;
     };
     let resp = getFavoritos()
@@ -310,4 +312,53 @@ botonMas.addEventListener('click',()=>{
     seccionFavoritos.style.display='none';
     seccion4CreaGifo.style.display='flex';
     seccionTrending.style.display='none';
-})
+});
+
+
+//--SECCION MIS GIFOS --//
+
+let misGifMenu = document.getElementById('misGifMenu');
+misGifMenu.addEventListener('click',()=>{
+    seccion1Busquedas.style.display='none';
+    seccionFavoritos.style.display='none';
+    seccion4CreaGifo.style.display='none';
+    seccionMisGifos.style.display='flex';
+    displayMisGifos();
+});
+
+function displayMisGifos(){
+    let misGifGrid= document.getElementById('misGifGrid');
+    misGifGrid.innerHTML="";
+    
+    
+    //eliminar texto de sin gifos cuando corresponde//
+    let noMisGifosImg = document.getElementById('noMisGifosImg');
+    let noGifText = document.getElementById('h1Animate');
+    if(misGifosArray!=null){
+        noMisGifosImg.style.display="none";
+        noGifText.style.display="none";
+    }else{
+        noMisGifosImg.style.display="flex";
+        noGifText.style.display="flex";
+    };
+    ///traer favoritos con un fetch usando las key store que son el id//
+        async function getMisGifos() {
+            let url = `${urlGifsById}?api_key=${apiKey}&ids=${misGifosArray}`;
+            const respuesta = await fetch(url);
+            const resp = await respuesta.json();
+            return resp;
+        };
+        let resp = getMisGifos()
+        resp.then(response => {
+            for(i=0;i<response.data.length;i++){
+                crearGifCards(
+                    response.data[i].images.downsized_large.url,//el gif
+                    misGifosArray, //el objeto para el local storage
+                    response.data[i].id, //el id del objeto para el localstorage key
+                    response.data[i].title, //titulo
+                    response.data[i].username, //username
+                    misGifGrid //a donde se append la tarjeta creada
+                    );
+            };
+        })
+    } 

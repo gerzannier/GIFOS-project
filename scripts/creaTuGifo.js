@@ -80,8 +80,10 @@ function grabando(stream){
 
         let uploadImg = document.getElementById('uploadImg');
         let textoSubiendo= document.getElementById('textoSubiendo');
+        let chronometerDisplay=document.getElementById('reloj');
         uploadImg.style.display = 'block';
         textoSubiendo.style.display = 'block';
+        chronometerDisplay.style.display = 'none';
 
         subirGifBtn.style.display='none';
         boton2.style.backgroundColor='#FFFFFF';
@@ -103,8 +105,8 @@ function grabando(stream){
         })
         .then(
         response =>{
-        data = response.json();
-        console.log(data); 
+        dato = response.json();
+        console.log(dato); 
         uploadImg.src='/images/assets/ok.svg';
         textoSubiendo.textContent = "GIFO subido con éxito";
         iconosUploadedGif = document.getElementById('iconosUploadedGif');
@@ -115,6 +117,7 @@ function grabando(stream){
 
 };
 
+let misGifosArray = ["WfTAfkU6b3RezYlsxf","V5NroZm9d0YVQ5SMWk"];
 
 /*
 function grabando(stream){

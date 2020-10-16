@@ -18,7 +18,6 @@ function SaveLocalStorage(storagedArray, key, newGifId){
       for(i=0;i<storagedArray.length;i++){
         if(storagedArray[i] == newGifId){//verificar si ya esta almacenado ese ID
             storagedArray.splice(i,1); //en caso de que ya este, elimina
-            console.log(storagedArray)
             localStorage.setItem(key,JSON.stringify(storagedArray))
           return
         }
