@@ -347,10 +347,19 @@ main .seccion1 #busqueda #suggestionList .suggestionWord {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #9CAFC3;
 }
 
 main .seccion1 #busqueda #suggestionList .suggestionWord img {
   margin-right: 14px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 50%;
+  height: 16px;
+  width: 16px;
 }
 
 main .seccion1 #text-trending {
@@ -358,10 +367,23 @@ main .seccion1 #text-trending {
   margin-bottom: 7px;
 }
 
-main .seccion1 #text-reactions {
-  font-size: 14px;
+main .seccion1 #listaTrendTerms {
+  list-style: none;
+  display: inline;
   width: 60%;
+  margin-bottom: 40px;
+}
+
+main .seccion1 #listaTrendTerms .trendWord {
+  display: inline;
+  font-size: 14px;
   text-align: center;
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+main .seccion1 #listaTrendTerms .trendWord:after {
+  content: ", ";
 }
 
 main .seccion1 #searchResults {
@@ -375,6 +397,15 @@ main .seccion1 #searchResults {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main .seccion1 #searchResults #searchedWord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 25px;
 }
 
 main .seccion1 #searchResults #searchGifGrid {
@@ -491,8 +522,19 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGi
   main .seccion1 #text-trending {
     font-size: 18px;
   }
-  main .seccion1 #text-reactions {
+  main .seccion1 #listaTrendTerms {
+    list-style: none;
+    display: inline;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  main .seccion1 #listaTrendTerms .trendWord {
+    display: inline;
     font-size: 16px;
+  }
+  main .seccion1 #searchResults #searchedWord {
+    font-size: 35px;
   }
   main .seccion1 #searchResults #searchGifGrid {
     width: 80%;

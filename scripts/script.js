@@ -2,6 +2,7 @@ const urlTrend = 'https://api.giphy.com/v1/gifs/trending';
 const urlSearch = 'https://api.giphy.com/v1/gifs/search';
 const urlSuggestions = 'https://api.giphy.com/v1/gifs/search/tags';
 const urlGifsById ='https://api.giphy.com/v1/gifs';
+const urlTrendTerms = 'https://api.giphy.com/v1/trending/searches';
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
 
@@ -76,7 +77,32 @@ function sideScroll(element,direction,speed,distance,step){
             window.clearInterval(slideTimer);
         }
     }, speed);
-}
+};
+
+//---TRAER TRENDING TERMS ---///
+
+async function trendingTerm() {
+    let url = `${urlTrendTerms}?api_key=${apiKey}`;
+    const respuesta = await fetch(url);
+    const resp = await respuesta.json();
+    console.log(resp);
+    return resp;
+};
+let resp = trendingTerm()
+resp.then(response => {
+    let listaTrendTerms = document.getElementById('listaTrendTerms');
+    for(let i=0;i<5;i++){
+        let trendTerm = document.createElement('li');
+        trendTerm.textContent = response.data[i];
+        trendTerm.setAttribute('class','trendWord');
+        trendTerm.addEventListener('click',()=>{
+            userInputBusqueda.value = trendTerm.textContent;
+            nuevaBusqueda()
+            })
+        listaTrendTerms.appendChild(trendTerm);
+    }
+ });
+
 
 //----------BUCAR GIF------------//
 
@@ -178,6 +204,7 @@ function suggestions() {
             suggestionWord.addEventListener('click',()=>{
                 userInputBusqueda.value = suggestionWord.textContent;
                 suggestionList.style.display='none';
+                nuevaBusqueda()
                 })
             suggestionList.appendChild(suggestionWord);
             

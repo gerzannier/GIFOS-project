@@ -65,8 +65,16 @@ main{
                     display: flex;
                     flex-flow: row-reverse;
                     justify-content: flex-end;
+                    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #9CAFC3;
                     img{
                         margin-right: 14px;
+                        filter: grayscale(100%);
+                        opacity: 50%;
+                        height: 16px;
+                        width: 16px;
                     }
                 }
             }
@@ -75,15 +83,32 @@ main{
             font-size: 16px;
             margin-bottom: 7px;
         }
-        #text-reactions{
-            font-size: 14px;
+        #listaTrendTerms{
+            list-style: none;
+            display: inline;
             width: 60%;
-            text-align: center;
+            margin-bottom: 40px;
+            .trendWord{
+                display: inline;
+                font-size: 14px;
+                text-align: center;
+                font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                &:after {
+                content: ", ";
+                  }
+            }
         }
         #searchResults{
             display: flex;
             flex-flow: column;
             align-items: center;
+            #searchedWord{
+                display: flex;
+                font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+                font-weight: 800;
+                font-size: 25px;
+            }
             #searchGifGrid{
                 display: flex;
                 flex-flow: wrap;
@@ -182,11 +207,22 @@ main{
         #text-trending{
             font-size: 18px;
         }
-        #text-reactions{
-            font-size: 16px;
+        #listaTrendTerms{
+            list-style: none;
+            display: inline;
+            width: 60%;
+            text-align: center;
+            margin-bottom: 40px;
+            .trendWord{
+                display: inline;
+                font-size: 16px;
+            }
         }
         #searchResults{
+            #searchedWord{
+                font-size: 35px;
 
+            }
             #searchGifGrid{
                 width: 80%;
                 .tarjetaSearchGif{
