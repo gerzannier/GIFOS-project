@@ -11,17 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
     <header class="header">
         <img class="logo" id="logo" src="/images/assets/logo-mobile.svg" alt="logo">
         <input class="menu-btn" type="checkbox" id="menu-btn">
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul class="menu">
-            <li><a href="#episodios">MODO NOCTURNO </a><span id='underLine'></span></li>
+            <li><a href="#episodios" id="modoNocturno">MODO NOCTURNO </a><span id='underLine'></span></li>
             <li><a href="#dedonde" id="favMenu">FAVORITOS</a><span id='underLine'></span></li>
             <li><a href="#invitadas" id="misGifMenu">MIS GIFOS</a><span id='underLine'></span></li>
             <div class="masBtn" id="masBtn">
-                <img src="/images/assets/button-crear-gifo.svg" alt="boton-mas">
+                <img id="masBtnImg" src="/images/assets/button-crear-gifo.svg" alt="boton-mas">
             </div>
         </ul>
     </header>
@@ -60,17 +60,17 @@
             <h1 id="seccion2-text-trending">Trending GIFOS</h1>
             <h5 id="seccion2-text-mira">Mira los últimos GIFOS de nuestra comunidad.</h5>
             <div id="trends">
-                <div id="slideBackBtn"><img src="/images/assets/button-left.svg" alt="back"></div>
+                <div id="slideBackBtn"><img  id="slideBackBtnImg" src="/images/assets/button-slider-left.svg" alt="back"></div>
                 <div id="trendGifBox">
                     <div id="trendGifContainer"></div>
                 </div>
-                <div id="slideBtn"><img src="/images/assets/button-right.svg" alt="slide"></div>
+                <div id="slideBtn"><img id="slideBtnImg" src="/images/assets/Button-Slider-right.svg" alt="slide"></div>
             </div>
         </section>
         <section id="seccion4-creaGifo">
             <div id="camCuadro">
                 <div id="imgCamara">
-                    <img src="/images/assets/camara.svg" alt="camara" id="camImg">
+                    <img src="/images/assets/element-camara.svg" alt="camara" id="camImg">
                     <img src="/images/assets/element-luz-camara.svg" alt="luzCamara" id="luzImg">
                 </div>
                 <div id="recuadroVideo">
@@ -129,7 +129,6 @@
         <h3 id="copiright">© GIFOS 2020 All Rights Reserved.</h3>
     </footer>
 
-
     
     <script src="https://kit.fontawesome.com/5e5e601f03.js" crossorigin="anonymous"></script>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
@@ -139,6 +138,7 @@
     <script src="/scripts/creaTuGifo.js"></script>
     <script src="/scripts/timer.js"></script>
     <script src="/scripts/SetLocalStorage.js"></script>
+    <script src="/scripts/modoNocturno.js"></script>
 </body>
 
 </html>

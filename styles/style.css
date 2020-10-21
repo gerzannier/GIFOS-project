@@ -184,8 +184,6 @@
   .header ul .masBtn {
     height: 54px;
     width: 54px;
-    border-radius: 50%;
-    border: solid 1px #572EE5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -574,7 +572,6 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGi
             justify-content: center;
     height: 40px;
     width: 40px;
-    border: solid 1px #572EE5;
     margin-right: 5%;
   }
   main .seccion2-trending #trends #slideBackBtn {
@@ -586,7 +583,6 @@ main .seccion2-trending #trends #trendGifBox #trendGifContainer .tarjetaSearchGi
             justify-content: center;
     height: 50px;
     width: 50px;
-    border: solid 1px #572EE5;
     margin-left: 5%;
   }
   main .seccion2-trending #trends #trendGifBox {
@@ -1020,6 +1016,11 @@ main #seccion4-creaGifo #camCuadro #imgCamara {
   display: flex;
   height: 165px;
   justify-self: end;
+}
+
+main #seccion4-creaGifo #camCuadro #imgCamara #camImg {
+  width: 123px;
+  margin-top: 7vh;
 }
 
 main #seccion4-creaGifo #camCuadro #recuadroVideo {

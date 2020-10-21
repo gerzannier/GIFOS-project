@@ -117,7 +117,7 @@ function grabando(stream){
 
 };
 
-let misGifosArray = ["WfTAfkU6b3RezYlsxf","V5NroZm9d0YVQ5SMWk"];
+let misGifosArray = ["WfTAfkU6b3RezYlsxf","V5NroZm9d0YVQ5SMWk","TSpz0mtAtWLAHh3A95"];
 
 /*
 function grabando(stream){

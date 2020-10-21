@@ -339,6 +339,7 @@ botonMas.addEventListener('click',()=>{
     seccionFavoritos.style.display='none';
     seccion4CreaGifo.style.display='flex';
     seccionTrending.style.display='none';
+    seccionMisGifos.style.display='none';
 });
 
 
