@@ -17,6 +17,7 @@ homeLogo.addEventListener('click',()=>{
     seccionMisGifos.style.display='none';
 })
 
+
 //TRAER TRENDING GIF AL HOME//
 
 function trendingGif() {
@@ -287,6 +288,7 @@ favMenu.addEventListener('click',()=>{
     seccionFavoritos.style.display='flex';
     seccion4CreaGifo.style.display='none';
     seccionMisGifos.style.display='none';
+    seccionTrending.style.display='flex';
     crearFavoritos();
 });
 
@@ -351,8 +353,12 @@ misGifMenu.addEventListener('click',()=>{
     seccionFavoritos.style.display='none';
     seccion4CreaGifo.style.display='none';
     seccionMisGifos.style.display='flex';
+    seccionTrending.style.display='flex';
     displayMisGifos();
 });
+
+var misGifosKey = "misGifos";
+var misGifosArray = JSON.parse(localStorage.getItem(misGifosKey));
 
 function displayMisGifos(){
     let misGifGrid= document.getElementById('misGifGrid');
@@ -369,7 +375,7 @@ function displayMisGifos(){
         noMisGifosImg.style.display="flex";
         noGifText.style.display="flex";
     };
-    ///traer favoritos con un fetch usando las key store que son el id//
+    ///traer favoritos con un fetch usando  el id//
         async function getMisGifos() {
             let url = `${urlGifsById}?api_key=${apiKey}&ids=${misGifosArray}`;
             const respuesta = await fetch(url);

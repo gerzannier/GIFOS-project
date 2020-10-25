@@ -19,8 +19,8 @@ function activarCamara() {
     comenzarBtn.style.display='none';
     textosGrabarH1.textContent='¿Nos das acceso a tu cámara?';
     textosGrabarH5.textContent='El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO.';
-    boton1.style.backgroundColor='#572EE5';
-    boton1.style.color='#FFFFFF ';
+    boton1.style.backgroundColor=textColor;
+    boton1.style.color=backColor;
     async function getStreamAndRecord() {
         stream = await navigator.mediaDevices.getUserMedia({
             audio: false,
@@ -34,10 +34,10 @@ function activarCamara() {
     let stream = getStreamAndRecord();
     stream.then(response => {
         grabarBtn.style.display='block';
-        boton1.style.backgroundColor='#FFFFFF';
-        boton1.style.color='#572EE5';
-        boton2.style.backgroundColor='#572EE5';
-        boton2.style.color='#FFFFFF';
+        boton1.style.backgroundColor=backColor;
+        boton1.style.color=textColor;
+        boton2.style.backgroundColor=textColor;
+        boton2.style.color=backColor;
 
         textosGrabar.style.display='none';
         video = document.getElementById('video');
@@ -86,10 +86,10 @@ function grabando(stream){
         chronometerDisplay.style.display = 'none';
 
         subirGifBtn.style.display='none';
-        boton2.style.backgroundColor='#FFFFFF';
-        boton2.style.color='#572EE5';
-        boton3.style.backgroundColor='#572EE5';
-        boton3.style.color='#FFFFFF';
+        boton2.style.backgroundColor=backColor;
+        boton2.style.color=textColor;
+        boton3.style.backgroundColor=textColor;
+        boton3.style.color=backColor;
         let videoContainer=document.getElementById('contenido');
         videoContainer.style.backgroundColor='#572EE5';
         videoContainer.style.width=video.clientWidth + 'px';
@@ -98,15 +98,19 @@ function grabando(stream){
         let form = new FormData();
         form.append('file', recorder.getBlob(), 'myGif.gif');
         console.log(form.get('file')); //para chequear que el objeto FormData se creó correctamente
+        async function postGifCreado(){
+            const respuesta = await fetch("https://upload.giphy.com/v1/gifs?api_key="+ apiKey, {
+                    method: "POST",
+                    body: form
+            })
+            const resp = await respuesta.json();
+            return resp;
+        };
+        let resp = postGifCreado();
+        resp.then(response =>{
+        console.log(response);
+        SaveLocalStorage(misGifosArray, misGifosKey,response.data.id )
 
-        fetch("https://upload.giphy.com/v1/gifs?api_key="+ apiKey, {
-                method: "POST",
-                body: form
-        })
-        .then(
-        response =>{
-        dato = response.json();
-        console.log(dato); 
         uploadImg.src='/images/assets/ok.svg';
         textoSubiendo.textContent = "GIFO subido con éxito";
         iconosUploadedGif = document.getElementById('iconosUploadedGif');
@@ -117,7 +121,6 @@ function grabando(stream){
 
 };
 
-let misGifosArray = ["WfTAfkU6b3RezYlsxf","V5NroZm9d0YVQ5SMWk","TSpz0mtAtWLAHh3A95"];
 
 /*
 function grabando(stream){

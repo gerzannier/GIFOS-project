@@ -231,6 +231,44 @@
   line-height: 42px;
 }
 
+* body .botonesTipoVerMas {
+  display: none;
+  margin-top: 78px;
+  height: 50px;
+  width: 127px;
+  border: 1px solid #572EE5;
+  color: #572EE5;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-family: 'Montserrat',arial;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+* body .botonesTipoVerMas:hover {
+  background-color: #572EE5;
+  color: #FFFFFF;
+}
+
+* body .botnesTipoVerMasNoctMode {
+  display: none;
+  margin-top: 78px;
+  height: 50px;
+  width: 127px;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 25px;
+  background-color: #37383C;
+  font-family: 'Montserrat',arial;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+* body .botnesTipoVerMasNoctMode:hover {
+  background-color: #FFFFFF;
+  color: #37383C;
+}
+
 main {
   margin-top: 95px;
   width: 100%;
@@ -421,20 +459,6 @@ main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif {
   height: 120px;
   width: 156px;
   margin: 10px;
-}
-
-main .seccion1 #verMasSearches {
-  display: none;
-  margin-top: 78px;
-  height: 50px;
-  width: 127px;
-  border: 1px solid #572EE5;
-  color: #572EE5;
-  border-radius: 25px;
-  background-color: #ffffff;
-  font-family: 'Montserrat',arial;
-  font-weight: 700;
-  font-size: 13px;
 }
 
 main .seccion2-trending {
@@ -986,6 +1010,7 @@ main #seccion-favoritos #favoriteGifGrid .tarjetaSearchGif {
 }
 
 main #seccion4-creaGifo {
+  margin-bottom: 90px;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1230,17 +1255,12 @@ main #seccion4-creaGifo #comandosVideo #imgCinta {
   height: 87px;
 }
 
-main #seccion4-creaGifo .crearGifoBtn {
-  width: 127px;
-  height: 50px;
-  border: 1px solid #572EE5;
-  color: #572EE5;
-  border-radius: 25px;
-  background-color: #ffffff;
-  font-family: 'Montserrat',arial;
-  font-weight: 700;
-  font-size: 13px;
-  display: none;
+main #seccion4-creaGifo .botonesTipoVerMas {
+  margin-top: 20px;
+}
+
+main #seccion4-creaGifo .botnesTipoVerMasNoctMode {
+  margin-top: 20px;
 }
 
 main #seccion4-creaGifo #comenzarBtn {
