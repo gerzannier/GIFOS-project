@@ -363,7 +363,6 @@ main .seccion1 #busqueda #searchBox #imagenLupa {
   height: 24px;
   width: 24px;
   margin-right: 5%;
-  z-index: 3;
 }
 
 main .seccion1 #busqueda #suggestionList {

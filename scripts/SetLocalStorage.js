@@ -1,9 +1,5 @@
 
 
-
-let myGifKey = "myGif"
-let misGifsIdArray = JSON.parse(localStorage.getItem(myGifKey));
-
 /*Almacena en array del local storage el nuevo ID de favoritos o de mis gifos. 
 Previamente verifica que no exista ya el Id en el array */
 

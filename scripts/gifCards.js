@@ -7,7 +7,8 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
             let tarjetaSearchGif = document.createElement('div');
             tarjetaSearchGif.setAttribute('class','tarjetaSearchGif');
                 //--funcion de mouseover para las tarjetas--//
-                tarjetaSearchGif.addEventListener('mouseover',cambiaClase);
+            if(screen.width > 750){
+               tarjetaSearchGif.addEventListener('mouseover',cambiaClase);
                 tarjetaSearchGif.addEventListener('mouseout', vuelveClase);
                 function cambiaClase(){
                     tarjetaSearchGif.className= 'tarjetaMouseOver';
@@ -15,6 +16,7 @@ function crearGifCards(gifSource,storageInfo,storageKeyId,tituloGif,userNameGif,
                 function vuelveClase(){
                     tarjetaSearchGif.className= 'tarjetaSearchGif';
                 };
+            }
                 //--//
 
             let iconContainer = document.createElement('div');

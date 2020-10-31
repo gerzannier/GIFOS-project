@@ -296,10 +296,9 @@ var favoritosKey = "favoritos";
 var favoritosIdArray = JSON.parse(localStorage.getItem(favoritosKey)); //el array con los ID defavoritos ya almacenados
 
 function crearFavoritos(){
+favoritosIdArray = JSON.parse(localStorage.getItem(favoritosKey)); 
 let favoriteGifGrid= document.getElementById('favoriteGifGrid');
 favoriteGifGrid.innerHTML="";
-
-
 //eliminar texto de sin favoritos cuando corresponde//
 let noFavImg = document.getElementById('noFavImg');
 let noFavText = document.getElementById('h1Guarda');
@@ -336,6 +335,24 @@ if(favoritosIdArray!=null){
 
 let seccion4CreaGifo = document.getElementById('seccion4-creaGifo');
 let botonMas = document.getElementById('masBtn');
+let botonMasImg = document.getElementById('masBtnImg');
+//hover boton crear gif en header
+botonMasImg.addEventListener('mouseover',()=>{
+    if(backColor=='#FFFFFF'){
+    botonMasImg.src ='/images/assets/CTA-crear-gifo-hover.svg';
+    }else{
+    botonMasImg.src ='/images/assets/CTA-crear-gifo-hover-modo-noc.svg';
+    }
+});
+botonMasImg.addEventListener('mouseout',()=>{
+    if(backColor=='#FFFFFF'){
+    botonMasImg.src ='/images/assets/button-crear-gifo.svg';
+    }else{
+    botonMasImg.src ='/images/assets/CTA-crear-gifo-modo-noc.svg';
+    }
+});
+//--//
+
 botonMas.addEventListener('click',()=>{
     seccion1Busquedas.style.display='none';
     seccionFavoritos.style.display='none';
@@ -363,7 +380,7 @@ var misGifosArray = JSON.parse(localStorage.getItem(misGifosKey));
 function displayMisGifos(){
     let misGifGrid= document.getElementById('misGifGrid');
     misGifGrid.innerHTML="";
-    
+    misGifosArray = JSON.parse(localStorage.getItem(misGifosKey));
     
     //eliminar texto de sin gifos cuando corresponde//
     let noMisGifosImg = document.getElementById('noMisGifosImg');
