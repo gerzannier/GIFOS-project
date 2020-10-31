@@ -5,7 +5,7 @@ const urlGifsById ='https://api.giphy.com/v1/gifs';
 const urlTrendTerms = 'https://api.giphy.com/v1/trending/searches';
 const apiKey = 'RiYU8vvam7ixep09Qr1cm1tnTiklmuSm';
 
-
+ 
 //CLICK A HOME//
 let seccionTrending = document.getElementById('seccion2-trending');
 let homeLogo=document.getElementById('logo');
