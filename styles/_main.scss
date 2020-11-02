@@ -33,6 +33,7 @@ main{
                 align-items: center;
                 width: 100%;
                 #inputBusqueda{
+                    outline: none;
                     height: 50px;
                     width: 100%;
                     background-color: transparent;
@@ -118,6 +119,20 @@ main{
                     margin: 10px;
                 }
 
+            }
+            #ouchImg{
+                margin-top: 100px;
+                width: 150px;
+                height: 150px;
+            }
+            #noResultText{
+                margin-top: 29px;
+                width: 90%;
+                font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+                font-weight: 800;
+                font-size: 22px;
+                color: #50E3C2;
+                text-align: center;
             }
         }
     }

@@ -232,6 +232,7 @@
 }
 
 * body .botonesTipoVerMas {
+  outline: none;
   display: none;
   margin-top: 78px;
   height: 50px;
@@ -333,6 +334,7 @@ main .seccion1 #busqueda #searchBox {
 }
 
 main .seccion1 #busqueda #searchBox #inputBusqueda {
+  outline: none;
   height: 50px;
   width: 100%;
   background-color: transparent;
@@ -458,6 +460,22 @@ main .seccion1 #searchResults #searchGifGrid .tarjetaSearchGif {
   height: 120px;
   width: 156px;
   margin: 10px;
+}
+
+main .seccion1 #searchResults #ouchImg {
+  margin-top: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+main .seccion1 #searchResults #noResultText {
+  margin-top: 29px;
+  width: 90%;
+  font-family: 'Montserrat',Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #50E3C2;
+  text-align: center;
 }
 
 main .seccion2-trending {
@@ -1129,7 +1147,7 @@ main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #textoSubiendo {
 main #seccion4-creaGifo #camCuadro #recuadroVideo #contenido #iconosUploadedGif {
   display: none;
   position: absolute;
-  top: 18vh;
+  top: 23vh;
   right: 37vw;
 }
 

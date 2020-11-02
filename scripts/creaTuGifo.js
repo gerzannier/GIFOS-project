@@ -69,6 +69,8 @@ function grabando(stream){
     finalizarBtn.addEventListener('click',()=>{
         video.pause();
         recorder.stopRecording();
+        const tracks = stream.getTracks();
+        tracks[0].stop();
         console.log(recorder.state);
         finalizarBtn.style.display='none';
         subirGifBtn.style.display='block';
@@ -115,12 +117,34 @@ function grabando(stream){
         textoSubiendo.textContent = "GIFO subido con éxito";
         iconosUploadedGif = document.getElementById('iconosUploadedGif');
         iconosUploadedGif.style.display='flex';
+        createdGifInfo(response.data.id)
         });             
     
     })
 
 };
 
+//fetch al Gif creado para funcion descarga y copy link //
+function createdGifInfo(gifId){
+    async function getCreatedGif() {
+        let url = `${urlGifsById}?api_key=${apiKey}&ids=${gifId}`;
+        const respuesta = await fetch(url);
+        const resp = await respuesta.json();
+        return resp;
+    };
+    let resp = getCreatedGif()
+    resp.then(response => {
+        let linkBtn = document.getElementById('linkBtn');
+        linkBtn.addEventListener('click',()=>{
+            copyTextToClipboard(response.data[0].embed_url);
+        });
+        let downBtn2 = document.getElementById('downBtn2');
+        downBtn2.addEventListener('click',()=>{
+                descargarGif(response.data[0].images.downsized_large.url);
+               })
+        
+    });
+};
 
 /*
 function grabando(stream){

@@ -1,3 +1,5 @@
+//API Giphy Endpoints//
+
 const urlTrend = 'https://api.giphy.com/v1/gifs/trending';
 const urlSearch = 'https://api.giphy.com/v1/gifs/search';
 const urlSuggestions = 'https://api.giphy.com/v1/gifs/search/tags';
@@ -137,6 +139,19 @@ function buscarGif(limit,offset){
         let searchWord= document.createElement('h1');
         searchWord.textContent= userInput;
         searchResults.appendChild(searchWord);
+
+        if(response.data.length==0){
+            let ouchImg = document.createElement('img');
+            ouchImg.setAttribute('src','/images/assets/icon-busqueda-sin-resultado.svg');
+            ouchImg.setAttribute('id','ouchImg');
+            let noResultText = document.createElement('h5');
+            noResultText.setAttribute('id','noResultText');
+            noResultText.textContent = 'Intenta con otra búsqueda.';
+            searchResults.appendChild(ouchImg);
+            searchResults.appendChild(noResultText);
+            verMasBtn.style.display='none';
+            return
+        }
 
         //Crea grilla de Gifs//
         let searchGifGrid= document.createElement('div');
@@ -289,9 +304,11 @@ favMenu.addEventListener('click',()=>{
     seccion4CreaGifo.style.display='none';
     seccionMisGifos.style.display='none';
     seccionTrending.style.display='flex';
+    favGifToDisplay = 12;
     crearFavoritos();
 });
 
+var favGifToDisplay = 12 //it starts showing max 12 gifs
 var favoritosKey = "favoritos";
 var favoritosIdArray = JSON.parse(localStorage.getItem(favoritosKey)); //el array con los ID defavoritos ya almacenados
 
@@ -309,7 +326,7 @@ if(favoritosIdArray!=null){
     noFavImg.style.display="flex";
     noFavText.style.display="flex";
 }
-///traer favoritos con un fetch usando las key store que son el id//
+///traer favoritos con un fetch usando el id//
     async function getFavoritos() {
         let url = `${urlGifsById}?api_key=${apiKey}&ids=${favoritosIdArray}`;
         const respuesta = await fetch(url);
@@ -318,7 +335,7 @@ if(favoritosIdArray!=null){
     };
     let resp = getFavoritos()
     resp.then(response => {
-        for(i=0;i<response.data.length;i++){
+        for(i=0;i<favGifToDisplay;i++){
             crearGifCards(
                 response.data[i].images.downsized_large.url,//el gif
                 favoritosIdArray, //el objeto para el local storage
@@ -328,8 +345,16 @@ if(favoritosIdArray!=null){
                 favoriteGifGrid //a donde se append la tarjeta creada
                 );
         };
+        if(response.data.length>12){           
+            verMasFab.style.display = 'block';
+        }
     })
-} 
+};
+let verMasFab = document.getElementById('verMasFav');
+verMasFab.addEventListener('click',()=>{
+    favGifToDisplay = favGifToDisplay +12;
+    crearFavoritos();
+}) 
 
 //--CREAR TU PROPIO GIF --//
 
@@ -392,7 +417,7 @@ function displayMisGifos(){
         noMisGifosImg.style.display="flex";
         noGifText.style.display="flex";
     };
-    ///traer favoritos con un fetch usando  el id//
+    ///traer mis gifos con un fetch usando  el id//
         async function getMisGifos() {
             let url = `${urlGifsById}?api_key=${apiKey}&ids=${misGifosArray}`;
             const respuesta = await fetch(url);

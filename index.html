@@ -31,7 +31,7 @@
             <img id="imgPrincipal" src="/images/assets/ilustra_header.svg" alt="imagen-header">       
             <div id="busqueda">
                 <div id="searchBox">
-                    <input type="text" id="inputBusqueda" onfocus="this.value=''" value="Busca GIFOS y más">
+                    <input type="text" autocomplete="off" id="inputBusqueda" onfocus="this.value=''" value="Busca GIFOS y más">
                     <img id="imagenLupa" src="/images/assets/icon-search.svg" alt="lupa">
                 </div>
             </div>
@@ -48,6 +48,7 @@
             <h1 id="h1Guarda" class="noFav">"¡Guarda tu primer GIFO en Favoritos 
                 para que se muestre aquí!" </h1>
             <div id="favoriteGifGrid"></div>
+            <button id="verMasFav" class="botonesTipoVerMas">VER MÁS</button>
         </section>
         <section id="seccion-misGifos">
             <img src="/images/assets/icon-mis-gifos.svg" alt="faceImage" id="faceImg">
@@ -139,6 +140,7 @@
     <script src="/scripts/timer.js"></script>
     <script src="/scripts/SetLocalStorage.js"></script>
     <script src="/scripts/modoNocturno.js"></script>
+    <script src="/scripts/copyToClipboard.js"></script>
 </body>
 
 </html>
