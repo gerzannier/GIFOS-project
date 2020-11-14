@@ -10,19 +10,18 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body id="body">
     <header class="header">
         <img class="logo" id="logo" src="/images/assets/logo-mobile.svg" alt="logo">
         <input class="menu-btn" type="checkbox" id="menu-btn">
         <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
         <ul class="menu" id="menu">
-            <li><a href="#episodios" id="modoNocturno">MODO NOCTURNO </a><span id='underLine'></span></li>
-            <li><a href="#dedonde" id="favMenu">FAVORITOS</a><span id='underLine'></span></li>
-            <li><a href="#invitadas" id="misGifMenu">MIS GIFOS</a><span id='underLine'></span></li>
-            <div class="masBtn" id="masBtn">
+            <li><a id="modoNocturno">MODO NOCTURNO </a><span id='underLine'></span></li>
+            <li><a  id="favMenu">FAVORITOS</a><span id='underLine2'></span></li>
+            <li><a id="misGifMenu">MIS GIFOS</a><span id='underLine3'></span></li>
+            <li class="masBtn" id="masBtn">
                 <img id="masBtnImg" src="/images/assets/button-crear-gifo.svg" alt="boton-mas">
-            </div>
+            </li>
         </ul>
     </header>
     <main>
@@ -84,21 +83,19 @@
                             <h1 id="textoGrabarH1">Aquí podrás <br>crear tus propios <span>GIFOS</span></h1>
                             <h5  id="textoGrabarH5">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</h5>
                         </div>
-                        <video id="video" src=""></video>
+                        <video id="video"></video>
                         <img id="uploadImg" src="/images/assets/loader.svg" alt="upload-image">
                         <h3 id="textoSubiendo">Estamos subiendo tu GIFO</h3>
                         <div id="iconosUploadedGif">
                             <img id="downBtn2" class="IconosGifCreado" src="/images/assets/icon-download.svg" alt="downloadBtn">
                             <img id="linkBtn" class="IconosGifCreado" src="/images/assets/icon-link.svg" alt="downloadBtn">
                         </div>
-
                     </div>
                     <div id="detallesDer" class="detalles">
                         <span id="l3" class="detalleL"></span>
                         <span id="l4" class="detalleL"></span>
                     </div>
                 </div>
-
             </div>
             <div id="comandosVideo">
                 <div id="contenedorBtn">
@@ -110,16 +107,13 @@
                     <h1 id="reloj">00:00:00</h1>
                 </div>
                 <img src="/images/assets/element_cinta2.svg" alt="cinta" id="imgCinta">
-
             </div>
             <button id="comenzarBtn" class="botonesTipoVerMas">COMENZAR</button>
             <button id="grabarBtn" class="botonesTipoVerMas">GRABAR</button>
             <button id="finalizarBtn" class="botonesTipoVerMas">FINALIZAR</button>
             <button id="subirGifBtn" class="botonesTipoVerMas">SUBIR GIFO</button>
         </section>
-        
     </main>
-
     <footer class="footer">
         <h3 id="footer-text-compartir">Compartir en:</h3>
         <div class="iconcontent">
@@ -129,8 +123,6 @@
         </div>
         <h3 id="copiright">© GIFOS 2020 All Rights Reserved.</h3>
     </footer>
-
-    
     <script src="https://kit.fontawesome.com/5e5e601f03.js" crossorigin="anonymous"></script>
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src='/scripts/script.js'></script>
@@ -142,5 +134,4 @@
     <script src="/scripts/modoNocturno.js"></script>
     <script src="/scripts/copyToClipboard.js"></script>
 </body>
-
 </html>

@@ -1322,6 +1322,9 @@ main #seccion-misGifos #h1Animate {
   font-size: 22px;
   color: #50E3C2;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main #seccion-misGifos #misGifGrid {
