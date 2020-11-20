@@ -101,11 +101,11 @@ resp.then(response => {
         trendTerm.addEventListener('click',()=>{
             userInputBusqueda.value = trendTerm.textContent;
             nuevaBusqueda()
+            cruzBorrar()
             })
         listaTrendTerms.appendChild(trendTerm);
     }
  });
-
 
 //----------BUCAR GIF------------//
 
@@ -113,7 +113,30 @@ let userInputBusqueda = document.getElementById('inputBusqueda');
 let searchBtn = document.getElementById('imagenLupa');
 let searchResults = document.getElementById('searchResults');
 
-searchBtn.addEventListener('click',nuevaBusqueda);
+//--lupa cambia a cruz y permite eliminar contenido--//
+userInputBusqueda.addEventListener('input',cruzBorrar);
+function cruzBorrar(){
+    searchBtn.setAttribute('src','/images/assets/close.svg');
+    searchBtn.style.height = '14px';
+    searchBtn.style.width = '14px';
+};
+searchBtn.addEventListener('click',()=>{
+    userInputBusqueda.value="";
+    searchBtn.setAttribute('src','/images/assets/icon-search.svg');
+    searchBtn.style.height = '24px';
+    searchBtn.style.width = '24px';
+});
+//--//
+
+//enter para inicar busqueda//
+userInputBusqueda.addEventListener('keyup',function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the button element with a click
+     nuevaBusqueda();
+    }
+  });
+  //--//
 
 function nuevaBusqueda(){
     searchResults.innerHTML="";
